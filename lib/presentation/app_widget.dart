@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mong/presentation/pages/splash/splash_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -7,9 +8,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.red,
-      ),
+      home: SplashPage(),
     );
   }
 }
