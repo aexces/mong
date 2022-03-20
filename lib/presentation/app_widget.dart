@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:mong/presentation/pages/splash/splash_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../application/splash/splash_cubit.dart';
+import 'router/app_router.gr.dart';
+import 'theme/theme.dart';
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({Key? key}) : super(key: key);
-
+  AppWidget({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => SplashCubit(),
-      child: const MaterialApp(
+      child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        home: SplashPage(),
+        theme: buildLightTheme(),
+        routerDelegate: _appRouter.delegate(),
+        routeInformationParser: _appRouter.defaultRouteParser(),
       ),
     );
   }
