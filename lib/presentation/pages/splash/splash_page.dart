@@ -14,7 +14,7 @@ class SplashPage extends StatelessWidget {
     context.read<SplashCubit>().updateSplash();
     return BlocListener<SplashCubit, SplashState>(
       listener: (context, state) {
-        if (state.splash == true) {
+        if (state.splash) {
           context.router.replaceAll([
             const PendingDebitsRoute(),
           ]);
