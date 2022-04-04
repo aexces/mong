@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../application/pending_debits/pending_debits_cubit.dart';
 import '../../../core/colors.dart';
 import '../../../core/constants.dart';
+import '../../application/pending/pending_cubit.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({
@@ -12,7 +12,7 @@ class BottomNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PendingDebitsCubit, PendingDebitsState>(
+    return BlocBuilder<PendingCubit, PendingState>(
       builder: (context, state) {
         return Positioned(
           bottom: 0,
@@ -34,7 +34,7 @@ class BottomNav extends StatelessWidget {
                   radius: 20,
                   child: IconButton(
                     onPressed: () =>
-                        context.read<PendingDebitsCubit>().updateIndex(0),
+                        context.read<PendingCubit>().updateIndex(0),
                     icon: Icon(
                       Icons.home,
                       color: state.index == 0 ? kWhiteColor : kLightBlack,
@@ -47,7 +47,7 @@ class BottomNav extends StatelessWidget {
                   radius: 20,
                   child: IconButton(
                     onPressed: () =>
-                        context.read<PendingDebitsCubit>().updateIndex(1),
+                        context.read<PendingCubit>().updateIndex(1),
                     icon: Icon(
                       Icons.home_work_outlined,
                       color: state.index == 1 ? kWhiteColor : kLightBlack,
@@ -60,7 +60,7 @@ class BottomNav extends StatelessWidget {
                   radius: 20,
                   child: IconButton(
                     onPressed: () =>
-                        context.read<PendingDebitsCubit>().updateIndex(2),
+                        context.read<PendingCubit>().updateIndex(2),
                     icon: Icon(
                       Icons.settings,
                       color: state.index == 2 ? kWhiteColor : kLightBlack,

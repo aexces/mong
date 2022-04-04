@@ -13,16 +13,19 @@ class FloatingButton extends StatelessWidget {
     return Positioned(
       right: 10,
       bottom: 75,
-      child: Container(
-        width: 55,
-        height: 55,
-        decoration: const BoxDecoration(
-          borderRadius: kRadius50,
-          color: kPrimaryColor,
-        ),
-        child: const Icon(
-          Icons.add,
-          color: kWhiteColor,
+      child: GestureDetector(
+        onTap: () {},
+        child: Container(
+          width: 55,
+          height: 55,
+          decoration: const BoxDecoration(
+            borderRadius: kRadius50,
+            color: kPrimaryColor,
+          ),
+          child: const Icon(
+            Icons.add,
+            color: kWhiteColor,
+          ),
         ),
       ),
     );

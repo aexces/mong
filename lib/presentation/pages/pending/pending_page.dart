@@ -5,8 +5,8 @@ import '../../widgets/bottom_nav.dart';
 import '../../widgets/floating_button.dart';
 import 'widgets/body.dart';
 
-class PendingDebitsPage extends StatelessWidget {
-  const PendingDebitsPage({Key? key}) : super(key: key);
+class PendingPage extends StatelessWidget {
+  const PendingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

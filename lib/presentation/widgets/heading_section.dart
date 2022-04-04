@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../application/pending_debits/pending_debits_cubit.dart';
 import '../../../core/colors.dart';
 import '../../../core/constants.dart';
+import '../../application/pending/pending_cubit.dart';
 
 class HeadingSection extends StatelessWidget {
   const HeadingSection({
@@ -21,7 +21,7 @@ class HeadingSection extends StatelessWidget {
           height: 20,
         ),
         kwidth2,
-        BlocBuilder<PendingDebitsCubit, PendingDebitsState>(
+        BlocBuilder<PendingCubit, PendingState>(
           builder: (context, state) {
             if (state.index == 0) {
               return const Text(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mong/application/pending_debits/pending_debits_cubit.dart';
 
+import '../../../../application/pending/pending_cubit.dart';
 import '../../../../core/colors.dart';
 import '../../../../core/constants.dart';
 
@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
           borderRadius: kRadiusL15R15,
           boxShadow: [kBoxShadow],
         ),
-        child: BlocBuilder<PendingDebitsCubit, PendingDebitsState>(
+        child: BlocBuilder<PendingCubit, PendingState>(
           builder: (context, state) {
             if (state.index == 0) {
               return ListView(

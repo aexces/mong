@@ -16,7 +16,7 @@ class SplashPage extends StatelessWidget {
       listener: (context, state) {
         if (state.splash) {
           context.router.replaceAll([
-            const PendingDebitsRoute(),
+            const PendingRoute(),
           ]);
         }
       },

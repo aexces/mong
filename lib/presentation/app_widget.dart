@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../application/pending_debits/pending_debits_cubit.dart';
+import '../application/pending/pending_cubit.dart';
 import '../application/splash/splash_cubit.dart';
 import 'router/app_router.gr.dart';
 import 'theme/theme.dart';
@@ -17,7 +17,7 @@ class AppWidget extends StatelessWidget {
           create: (context) => SplashCubit(),
         ),
         BlocProvider(
-          create: (context) => PendingDebitsCubit(),
+          create: (context) => PendingCubit(),
         ),
       ],
       child: MaterialApp.router(
