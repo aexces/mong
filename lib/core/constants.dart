@@ -21,6 +21,9 @@ const kRadiusL15R15 = BorderRadius.only(
   topLeft: Radius.circular(15),
   topRight: Radius.circular(15),
 );
+const kRadius50 = BorderRadius.all(
+  Radius.circular(50),
+);
 const kRadius10 = BorderRadius.all(Radius.circular(10));
 
 //*Box Shadow
