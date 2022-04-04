@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mong/application/main/main_cubit.dart';
 
 import '../../../core/colors.dart';
 import '../../../core/constants.dart';
-import '../../application/pending/pending_cubit.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({
@@ -12,7 +12,7 @@ class BottomNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PendingCubit, PendingState>(
+    return BlocBuilder<MainCubit, MainState>(
       builder: (context, state) {
         return Positioned(
           bottom: 0,
@@ -33,8 +33,7 @@ class BottomNav extends StatelessWidget {
                       state.index == 0 ? kPrimaryColor : kGreyColorWithOpacity,
                   radius: 20,
                   child: IconButton(
-                    onPressed: () =>
-                        context.read<PendingCubit>().updateIndex(0),
+                    onPressed: () => context.read<MainCubit>().updateIndex(0),
                     icon: Icon(
                       Icons.home,
                       color: state.index == 0 ? kWhiteColor : kLightBlack,
@@ -46,8 +45,7 @@ class BottomNav extends StatelessWidget {
                       state.index == 1 ? kPrimaryColor : kGreyColorWithOpacity,
                   radius: 20,
                   child: IconButton(
-                    onPressed: () =>
-                        context.read<PendingCubit>().updateIndex(1),
+                    onPressed: () => context.read<MainCubit>().updateIndex(1),
                     icon: Icon(
                       Icons.home_work_outlined,
                       color: state.index == 1 ? kWhiteColor : kLightBlack,
@@ -59,8 +57,7 @@ class BottomNav extends StatelessWidget {
                       state.index == 2 ? kPrimaryColor : kGreyColorWithOpacity,
                   radius: 20,
                   child: IconButton(
-                    onPressed: () =>
-                        context.read<PendingCubit>().updateIndex(2),
+                    onPressed: () => context.read<MainCubit>().updateIndex(2),
                     icon: Icon(
                       Icons.settings,
                       color: state.index == 2 ? kWhiteColor : kLightBlack,

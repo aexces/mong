@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'pending_cubit.dart';
+part of 'main_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,43 +15,42 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$PendingStateTearOff {
-  const _$PendingStateTearOff();
+class _$MainStateTearOff {
+  const _$MainStateTearOff();
 
-  _PendingState call({required int index}) {
-    return _PendingState(
+  _MainState call({required int index}) {
+    return _MainState(
       index: index,
     );
   }
 }
 
 /// @nodoc
-const $PendingState = _$PendingStateTearOff();
+const $MainState = _$MainStateTearOff();
 
 /// @nodoc
-mixin _$PendingState {
+mixin _$MainState {
   int get index => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $PendingStateCopyWith<PendingState> get copyWith =>
+  $MainStateCopyWith<MainState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PendingStateCopyWith<$Res> {
-  factory $PendingStateCopyWith(
-          PendingState value, $Res Function(PendingState) then) =
-      _$PendingStateCopyWithImpl<$Res>;
+abstract class $MainStateCopyWith<$Res> {
+  factory $MainStateCopyWith(MainState value, $Res Function(MainState) then) =
+      _$MainStateCopyWithImpl<$Res>;
   $Res call({int index});
 }
 
 /// @nodoc
-class _$PendingStateCopyWithImpl<$Res> implements $PendingStateCopyWith<$Res> {
-  _$PendingStateCopyWithImpl(this._value, this._then);
+class _$MainStateCopyWithImpl<$Res> implements $MainStateCopyWith<$Res> {
+  _$MainStateCopyWithImpl(this._value, this._then);
 
-  final PendingState _value;
+  final MainState _value;
   // ignore: unused_field
-  final $Res Function(PendingState) _then;
+  final $Res Function(MainState) _then;
 
   @override
   $Res call({
@@ -67,30 +66,28 @@ class _$PendingStateCopyWithImpl<$Res> implements $PendingStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PendingStateCopyWith<$Res>
-    implements $PendingStateCopyWith<$Res> {
-  factory _$PendingStateCopyWith(
-          _PendingState value, $Res Function(_PendingState) then) =
-      __$PendingStateCopyWithImpl<$Res>;
+abstract class _$MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
+  factory _$MainStateCopyWith(
+          _MainState value, $Res Function(_MainState) then) =
+      __$MainStateCopyWithImpl<$Res>;
   @override
   $Res call({int index});
 }
 
 /// @nodoc
-class __$PendingStateCopyWithImpl<$Res> extends _$PendingStateCopyWithImpl<$Res>
-    implements _$PendingStateCopyWith<$Res> {
-  __$PendingStateCopyWithImpl(
-      _PendingState _value, $Res Function(_PendingState) _then)
-      : super(_value, (v) => _then(v as _PendingState));
+class __$MainStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
+    implements _$MainStateCopyWith<$Res> {
+  __$MainStateCopyWithImpl(_MainState _value, $Res Function(_MainState) _then)
+      : super(_value, (v) => _then(v as _MainState));
 
   @override
-  _PendingState get _value => super._value as _PendingState;
+  _MainState get _value => super._value as _MainState;
 
   @override
   $Res call({
     Object? index = freezed,
   }) {
-    return _then(_PendingState(
+    return _then(_MainState(
       index: index == freezed
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -101,22 +98,22 @@ class __$PendingStateCopyWithImpl<$Res> extends _$PendingStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PendingState implements _PendingState {
-  const _$_PendingState({required this.index});
+class _$_MainState implements _MainState {
+  const _$_MainState({required this.index});
 
   @override
   final int index;
 
   @override
   String toString() {
-    return 'PendingState(index: $index)';
+    return 'MainState(index: $index)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PendingState &&
+            other is _MainState &&
             const DeepCollectionEquality().equals(other.index, index));
   }
 
@@ -126,17 +123,17 @@ class _$_PendingState implements _PendingState {
 
   @JsonKey(ignore: true)
   @override
-  _$PendingStateCopyWith<_PendingState> get copyWith =>
-      __$PendingStateCopyWithImpl<_PendingState>(this, _$identity);
+  _$MainStateCopyWith<_MainState> get copyWith =>
+      __$MainStateCopyWithImpl<_MainState>(this, _$identity);
 }
 
-abstract class _PendingState implements PendingState {
-  const factory _PendingState({required int index}) = _$_PendingState;
+abstract class _MainState implements MainState {
+  const factory _MainState({required int index}) = _$_MainState;
 
   @override
   int get index;
   @override
   @JsonKey(ignore: true)
-  _$PendingStateCopyWith<_PendingState> get copyWith =>
+  _$MainStateCopyWith<_MainState> get copyWith =>
       throw _privateConstructorUsedError;
 }
