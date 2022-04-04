@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mong/application/pending_debits/pending_debits_cubit.dart';
 
 import '../../../../core/colors.dart';
 import '../../../../core/constants.dart';
@@ -10,9 +12,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.of(context).size;
     return Positioned(
-      top: kValue70,
+      top: 70,
       bottom: 0,
       right: 0,
       left: 0,
@@ -20,14 +21,51 @@ class Body extends StatelessWidget {
         decoration: const BoxDecoration(
           color: kWhiteColor,
           borderRadius: kRadiusL15R15,
-          boxShadow: [
-            BoxShadow(
-              color: kBlackColor,
-              offset: Offset(0, 0),
-              blurRadius: 20.0,
-              spreadRadius: -5,
-            ),
-          ],
+          boxShadow: [kBoxShadow],
+        ),
+        child: BlocBuilder<PendingDebitsCubit, PendingDebitsState>(
+          builder: (context, state) {
+            if (state.index == 0) {
+              return ListView(
+                padding: kPadding12,
+                children: const [
+                  Text(
+                    "Pending Debits",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              );
+            }
+            if (state.index == 1) {
+              return ListView(
+                padding: kPadding12,
+                children: const [
+                  Text(
+                    "Pending Credits",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              );
+            }
+            if (state.index == 2) {
+              return ListView(
+                padding: kPadding12,
+                children: const [
+                  Text(
+                    "Settings",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              );
+            }
+            return kHeight20;
+          },
         ),
       ),
     );

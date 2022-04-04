@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mong/core/colors.dart';
 import 'package:mong/core/constants.dart';
+import '../../../application/pending_debits/pending_debits_cubit.dart';
 import '../widgets/bottom_nav.dart';
 import '../widgets/heading_section.dart';
 import 'widgets/body.dart';
@@ -16,9 +18,7 @@ class PendingDebitsPage extends StatelessWidget {
           Column(
             children: const [
               kHeight20,
-              HeadingSection(
-                heading: "Pending Debits",
-              ),
+              HeadingSection(),
             ],
           ),
           const Body(),

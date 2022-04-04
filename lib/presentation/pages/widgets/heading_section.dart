@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../application/pending_debits/pending_debits_cubit.dart';
 import '../../../core/colors.dart';
 import '../../../core/constants.dart';
 
 class HeadingSection extends StatelessWidget {
   const HeadingSection({
     Key? key,
-    required this.heading,
   }) : super(key: key);
-  final String heading;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +21,40 @@ class HeadingSection extends StatelessWidget {
           height: 20,
         ),
         kwidth2,
-        Text(
-          heading,
-          style: const TextStyle(
-            color: kBlackColor,
-            fontSize: 20,
-            fontFamily: "UbuntuCondensed",
-          ),
+        BlocBuilder<PendingDebitsCubit, PendingDebitsState>(
+          builder: (context, state) {
+            if (state.index == 0) {
+              return const Text(
+                "Pending Debits",
+                style: TextStyle(
+                  color: kBlackColor,
+                  fontSize: 20,
+                  fontFamily: "UbuntuCondensed",
+                ),
+              );
+            }
+            if (state.index == 1) {
+              return const Text(
+                "Pending Credits",
+                style: TextStyle(
+                  color: kBlackColor,
+                  fontSize: 20,
+                  fontFamily: "UbuntuCondensed",
+                ),
+              );
+            }
+            if (state.index == 2) {
+              return const Text(
+                "Settings",
+                style: TextStyle(
+                  color: kBlackColor,
+                  fontSize: 20,
+                  fontFamily: "UbuntuCondensed",
+                ),
+              );
+            }
+            return kHeight20;
+          },
         ),
       ],
     );

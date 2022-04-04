@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../application/pending_debits/pending_debits_cubit.dart';
 import '../application/splash/splash_cubit.dart';
 import 'router/app_router.gr.dart';
 import 'theme/theme.dart';
@@ -10,8 +11,15 @@ class AppWidget extends StatelessWidget {
   final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SplashCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => SplashCubit(),
+        ),
+        BlocProvider(
+          create: (context) => PendingDebitsCubit(),
+        ),
+      ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         theme: buildLightTheme(),
