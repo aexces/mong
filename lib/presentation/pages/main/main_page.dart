@@ -32,7 +32,7 @@ class MainPage extends StatelessWidget {
           ),
           BlocBuilder<MainCubit, MainState>(
             builder: (context, state) {
-              if (state.index == 3) {
+              if (state.index == 3 || state.index == 4) {
                 return kHeight20;
               }
               return const BottomNav();

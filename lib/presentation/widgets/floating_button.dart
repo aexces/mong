@@ -18,16 +18,16 @@ class FloatingButton extends StatelessWidget {
       builder: (context, state) {
         return Positioned(
           right: 10,
-          bottom: 75,
+          bottom: (state.index == 3 || state.index == 4) ? 10 : 75,
           child: GestureDetector(
             onTap: () {
               if (state.index == 0) {
-                context.read<MainCubit>().updateIndex(4);
-                print("updated to 4");
+                context.read<MainCubit>().updateIndex(3);
+                print("updated to 3");
               }
               if (state.index == 1) {
-                context.read<MainCubit>().updateIndex(5);
-                print("updated to 5");
+                context.read<MainCubit>().updateIndex(4);
+                print("updated to 4");
               }
             },
             child: Container(
