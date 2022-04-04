@@ -72,11 +72,11 @@ flutter:
   fonts:
     - family: SupermercadoOne
       fonts:
-        - asset: assets\fonts\SupermercadoOne-Regular.ttf
+        - asset: assets\fonts\SupermercadoOne\SupermercadoOne-Regular.ttf
           # style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+    - family: UbuntuCondensed
+      fonts:
+        - asset: assets\fonts\Ubuntu_Condensed\UbuntuCondensed-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
