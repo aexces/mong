@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../application/main/main_cubit.dart';
 import '../application/splash/splash_cubit.dart';
 import 'router/app_router.gr.dart';
 import 'theme/theme.dart';
@@ -14,6 +15,9 @@ class AppWidget extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => SplashCubit(),
+        ),
+        BlocProvider(
+          create: (context) => MainCubit(),
         ),
       ],
       child: MaterialApp.router(
