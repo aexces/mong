@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mong/core/colors.dart';
-import 'package:mong/core/constants.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../application/main/main_cubit.dart';
+import 'widgets/body_widgets_list.dart';
 import 'widgets/custom_navigation.dart';
 
 class MainPage extends StatelessWidget {
@@ -12,12 +13,10 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          SafeArea(
-            child: ListView(
-              children: const [
-                Text("Hello User"),
-              ],
-            ),
+          BlocBuilder<MainCubit, MainState>(
+            builder: (context, state) {
+              return bodyWidgetsList[state.currentIndex];
+            },
           ),
           const CustomNavigation(),
         ],
