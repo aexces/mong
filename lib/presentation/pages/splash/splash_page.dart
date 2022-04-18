@@ -14,11 +14,11 @@ class SplashPage extends StatelessWidget {
     context.read<SplashCubit>().updateSplash();
     return BlocListener<SplashCubit, SplashState>(
       listener: (context, state) {
-        if (state.splash) {
-          context.router.replaceAll([
-            const MainRoute(),
-          ]);
-        }
+        // if (state.splash) {
+        //   context.router.replaceAll([
+        //     const MainRoute(),
+        //   ]);
+        // }
       },
       child: const Scaffold(
         backgroundColor: kPrimaryColor,
