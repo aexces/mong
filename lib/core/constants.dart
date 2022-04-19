@@ -36,11 +36,13 @@ const kRadius50 = BorderRadius.all(
   Radius.circular(50),
 );
 const kRadius10 = BorderRadius.all(Radius.circular(10));
+const kRadius15 = BorderRadius.all(Radius.circular(15));
+const kRadius20 = BorderRadius.all(Radius.circular(20));
 
 //*Box Shadow
 const kBoxShadow = BoxShadow(
   color: kBlackColor,
-  offset: Offset(0, 0),
+  offset: Offset(0, -2),
   blurRadius: 30.0,
   spreadRadius: -10,
 );

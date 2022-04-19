@@ -5,5 +5,6 @@ import '../../core/colors.dart';
 ThemeData buildLightTheme() {
   return ThemeData(
     scaffoldBackgroundColor: kLightScaffoldBackgroundColor,
+    primarySwatch: kPrimaryColor,
   );
 }
