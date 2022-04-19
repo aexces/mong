@@ -5,7 +5,9 @@ import '../../core/constants.dart';
 class Head extends StatelessWidget {
   const Head({
     Key? key,
+    required this.heading,
   }) : super(key: key);
+  final String heading;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +21,9 @@ class Head extends StatelessWidget {
             color: Colors.red,
           ),
           kwidth10,
-          const Text(
-            "Pending Credits",
-            style: TextStyle(
+          Text(
+            heading,
+            style: const TextStyle(
               fontSize: 25,
               fontFamily: "UbuntuCondensed",
               fontWeight: FontWeight.bold,
