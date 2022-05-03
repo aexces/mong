@@ -1,7 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mong/presentation/router/app_router.gr.dart';
 
 import '../../../application/splash/splash_cubit.dart';
 import '../../../core/colors.dart';
@@ -15,9 +13,7 @@ class SplashPage extends StatelessWidget {
     return BlocListener<SplashCubit, SplashState>(
       listener: (context, state) {
         if (state.splash) {
-          context.router.replaceAll([
-            const MainRoute(),
-          ]);
+          print("Splash completed");
         }
       },
       child: const Scaffold(
