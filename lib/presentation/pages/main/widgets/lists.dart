@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mong/presentation/pages/record/record.dart';
 
 import '../../../../core/colors.dart';
 
@@ -20,12 +21,7 @@ const List<Widget> iconsList = [
   ),
 ];
 const List bodyLit = [
-  Center(
-    child: Text(
-      "1",
-      style: TextStyle(fontSize: 30),
-    ),
-  ),
+  RecordPage(),
   Center(
     child: Text(
       "2",

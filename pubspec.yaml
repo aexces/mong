@@ -75,9 +75,9 @@ flutter:
       fonts:
         - asset: assets\fonts\SupermercadoOne\SupermercadoOne-Regular.ttf
           # style: italic
-    - family: UbuntuCondensed
+    - family: SourceSansPro
       fonts:
-        - asset: assets\fonts\Ubuntu_Condensed\UbuntuCondensed-Regular.ttf
+        - asset: assets\fonts\Source_Sans_Pro\SourceSansPro-SemiBold.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

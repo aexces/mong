@@ -22,12 +22,10 @@ class Body extends StatelessWidget {
           width: double.maxFinite,
           height: double.maxFinite,
           color: kWhiteColor,
-          child: Center(
-            child: BlocBuilder<MainBloc, MainState>(
-              builder: (context, state) {
-                return bodyLit[state.bottomNavigationIndex];
-              },
-            ),
+          child: BlocBuilder<MainBloc, MainState>(
+            builder: (context, state) {
+              return bodyLit[state.bottomNavigationIndex];
+            },
           ),
         );
       },
