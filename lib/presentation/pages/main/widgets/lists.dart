@@ -19,3 +19,23 @@ const List<Widget> iconsList = [
     color: kWhiteColor,
   ),
 ];
+const List bodyLit = [
+  Center(
+    child: Text(
+      "1",
+      style: TextStyle(fontSize: 30),
+    ),
+  ),
+  Center(
+    child: Text(
+      "2",
+      style: TextStyle(fontSize: 30),
+    ),
+  ),
+  Center(
+    child: Text(
+      "3",
+      style: TextStyle(fontSize: 30),
+    ),
+  ),
+];
