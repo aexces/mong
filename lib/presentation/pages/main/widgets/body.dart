@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mong/core/constants.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../application/main/main_bloc.dart';
 import '../../../../core/colors.dart';
 
 class Body extends StatelessWidget {
@@ -9,39 +10,25 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      itemCount: 1,
+      itemCount: 3,
+      onPageChanged: (index) {
+        context.read<MainBloc>().add(
+              MainEvent.bottomNavigationIndexUpdated(index),
+            );
+      },
       itemBuilder: (context, index) {
         return Container(
           width: double.maxFinite,
           height: double.maxFinite,
           color: kWhiteColor,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  height: 150,
-                  width: double.infinity,
-                  color: kWhiteColor,
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                    borderRadius: kRadiusTL30TR30,
-                    color: kPrimaryColor,
-                  ),
-                  child: ListView.builder(
-                    itemCount: 100,
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                        title: Text(
-                          "title $index",
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
+          child: Center(
+            child: BlocBuilder<MainBloc, MainState>(
+              builder: (context, state) {
+                return Text(
+                  "Page ${state.bottomNavigationIndex}",
+                  style: const TextStyle(fontSize: 30),
+                );
+              },
             ),
           ),
         );
