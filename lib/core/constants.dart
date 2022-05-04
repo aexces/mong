@@ -1,5 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'colors.dart';
+import 'package:flutter/material.dart';
 
 //*Default Padding value
 const kDefaultPadding = 16.0;
@@ -10,15 +9,11 @@ const kDuration3Sec = Duration(seconds: 3);
 const kDuration5Sec = Duration(seconds: 5);
 
 //*Spacing Height
-const kheight2 = SizedBox(height: 2);
-const kheight5 = SizedBox(height: 5);
 const kHeight10 = SizedBox(height: 10);
 const kHeight20 = SizedBox(height: 20);
 const kHeight30 = SizedBox(height: 30);
 
 //*Spacing Width
-const kwidth2 = SizedBox(width: 2);
-const kwidth5 = SizedBox(width: 5);
 const kwidth10 = SizedBox(width: 10);
 const kwidth20 = SizedBox(width: 20);
 const kwidth30 = SizedBox(width: 30);
@@ -27,6 +22,10 @@ const kwidth30 = SizedBox(width: 30);
 const kRadiusTL15TR15 = BorderRadius.only(
   topLeft: Radius.circular(15),
   topRight: Radius.circular(15),
+);
+const kRadiusTL30TR30 = BorderRadius.only(
+  topLeft: Radius.circular(30),
+  topRight: Radius.circular(30),
 );
 const kRadiusTL10TR10 = BorderRadius.only(
   topLeft: Radius.circular(10),
@@ -41,11 +40,12 @@ const kRadius20 = BorderRadius.all(Radius.circular(20));
 
 //*Box Shadow
 const kBoxShadow = BoxShadow(
-  color: kBlackColor,
+  color: Colors.black,
   offset: Offset(0, -2),
   blurRadius: 30.0,
   spreadRadius: -10,
 );
 
 //*Padding
+const kPadding10 = EdgeInsets.all(10);
 const kPadding12 = EdgeInsets.all(12);

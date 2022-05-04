@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '../../core/colors.dart';
+import 'package:mong/core/colors.dart';
 
 ThemeData buildLightTheme() {
-  return ThemeData(
-    scaffoldBackgroundColor: kLightScaffoldBackgroundColor,
-    primarySwatch: kPrimaryColor,
+  return ThemeData.light().copyWith(
+    scaffoldBackgroundColor: kWhiteColor,
+    primaryColor: kPrimaryColor,
+    canvasColor: kPrimaryColor,
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: kPrimaryColor,
+    ),
   );
 }
