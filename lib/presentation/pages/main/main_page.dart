@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mong/data/record_data.dart';
 import 'package:mong/presentation/pages/main/widgets/body.dart';
 import 'package:mong/presentation/pages/main/widgets/curved_bar.dart';
 
@@ -7,11 +8,18 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
+    return Scaffold(
+      body: const SafeArea(
         child: Body(),
       ),
-      bottomNavigationBar: CurvedBar(),
+      bottomNavigationBar: const CurvedBar(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          final expense = await RecordData.calculateExpense(recordDataList);
+          print(expense.toString());
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

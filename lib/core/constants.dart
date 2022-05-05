@@ -14,9 +14,9 @@ const kHeight20 = SizedBox(height: 20);
 const kHeight30 = SizedBox(height: 30);
 
 //*Spacing Width
-const kwidth10 = SizedBox(width: 10);
-const kwidth20 = SizedBox(width: 20);
-const kwidth30 = SizedBox(width: 30);
+const kWidth10 = SizedBox(width: 10);
+const kWidth20 = SizedBox(width: 20);
+const kWidth30 = SizedBox(width: 30);
 
 //*Border Radius
 const kRadiusTL15TR15 = BorderRadius.only(

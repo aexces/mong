@@ -17,7 +17,7 @@ class CurvedBar extends StatelessWidget {
           height: 60,
           color: kPrimaryColor,
           index: state.bottomNavigationIndex,
-          backgroundColor: kWhiteColor,
+          backgroundColor: Colors.transparent,
           buttonBackgroundColor: kPrimaryColor,
           items: iconsList,
           onTap: (index) {

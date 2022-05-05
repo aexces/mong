@@ -10,7 +10,7 @@ class MainHeading extends StatelessWidget {
       style: TextStyle(
         fontSize: 35,
         letterSpacing: 1,
-        fontWeight: FontWeight.w700,
+        overflow: TextOverflow.ellipsis,
         fontFamily: "SourceSansPro",
       ),
     );
