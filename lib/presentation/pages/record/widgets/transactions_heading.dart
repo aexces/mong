@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/colors.dart';
 
-class TabHeading extends StatelessWidget {
-  const TabHeading({
+class TransactionsHeading extends StatelessWidget {
+  const TransactionsHeading({
     Key? key,
   }) : super(key: key);
 

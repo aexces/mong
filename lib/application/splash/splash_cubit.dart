@@ -11,7 +11,7 @@ class SplashCubit extends Cubit<SplashState> {
   SplashCubit() : super(SplashState.initial());
 
   void updateSplash() {
-    Timer(kDuration2Sec, () {
+    Timer(kDuration2, () {
       emit(state.copyWith(splash: true));
     });
   }

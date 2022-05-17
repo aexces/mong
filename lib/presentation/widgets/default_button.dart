@@ -18,8 +18,8 @@ class DefaultButton extends StatelessWidget {
       height: 50,
       width: double.infinity,
       child: MaterialButton(
-        shape: const RoundedRectangleBorder(
-          borderRadius: kRadius10,
+        shape: RoundedRectangleBorder(
+          borderRadius: kBorderRadius10,
         ),
         color: kPrimaryColor,
         onPressed: onPressed,

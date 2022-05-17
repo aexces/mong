@@ -19,7 +19,7 @@ class CurvedBar extends StatelessWidget {
           index: state.bottomNavigationIndex,
           backgroundColor: Colors.transparent,
           buttonBackgroundColor: kPrimaryColor,
-          items: iconsList,
+          items: bottomNavigationBarIconsList,
           onTap: (index) {
             context.read<MainBloc>().add(
                   MainEvent.bottomNavigationIndexUpdated(index),

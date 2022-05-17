@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mong/presentation/pages/record/widgets/tab_heading.dart';
+import 'package:mong/presentation/pages/record/widgets/transactions_heading.dart';
 
 import '../../../../core/constants.dart';
 import '../../../widgets/main_heading.dart';
@@ -16,8 +16,8 @@ class Head extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
-          MainHeading(),
-          TabHeading(),
+          MainHeading("Records"),
+          TransactionsHeading(),
         ],
       ),
     );

@@ -16,7 +16,10 @@ class Transactions extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           color: kWhiteColor,
-          borderRadius: kRadiusTL30TR30,
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
           boxShadow: [
             BoxShadow(
               color: kBlackColor.withOpacity(0.2),

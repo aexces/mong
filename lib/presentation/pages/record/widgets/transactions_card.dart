@@ -18,7 +18,7 @@ class TransactionsCard extends StatelessWidget {
       padding: const EdgeInsets.all(defaultPadding),
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: kRadius20,
+        borderRadius: kBorderRadius20,
         color: kWhiteColor,
         boxShadow: [
           BoxShadow(

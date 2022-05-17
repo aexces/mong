@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 class MainHeading extends StatelessWidget {
-  const MainHeading({Key? key}) : super(key: key);
+  const MainHeading(
+    this.heading, {
+    Key? key,
+  }) : super(key: key);
+  final String heading;
 
   @override
   Widget build(BuildContext context) {
     return const Text(
-      "Record",
+      "Records",
       style: TextStyle(
         fontSize: 35,
         letterSpacing: 1,
