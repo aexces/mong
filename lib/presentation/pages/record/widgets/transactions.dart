@@ -12,7 +12,7 @@ class Transactions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(kDefaultPadding),
+      padding: const EdgeInsets.all(defaultPadding),
       width: double.infinity,
       decoration: BoxDecoration(
           color: kWhiteColor,

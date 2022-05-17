@@ -12,12 +12,12 @@ class Head extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(kDefaultPadding),
+      padding: const EdgeInsets.all(defaultPadding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const MainHeading(),
-          const TabHeading(),
+        children: const [
+          MainHeading(),
+          TabHeading(),
         ],
       ),
     );

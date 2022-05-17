@@ -12,5 +12,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
         bottomNavigationIndex: event.index,
       ));
     });
+    on<_UpdateRadioButtonIndex>((event, emit) {
+      emit(state.copyWith(
+        radioButtonIndex: event.index,
+      ));
+    });
   }
 }

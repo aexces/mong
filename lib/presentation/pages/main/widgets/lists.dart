@@ -5,7 +5,7 @@ import '../../../../core/colors.dart';
 
 const List<Widget> iconsList = [
   Icon(
-    Icons.add,
+    Icons.compare_arrows,
     size: 30,
     color: kWhiteColor,
   ),

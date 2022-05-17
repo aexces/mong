@@ -15,7 +15,7 @@ class TransactionsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5),
-      padding: const EdgeInsets.all(kDefaultPadding),
+      padding: const EdgeInsets.all(defaultPadding),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: kRadius20,
@@ -38,12 +38,24 @@ class TransactionsCard extends StatelessWidget {
                     : kGreenColor.withOpacity(0.9),
           ),
           kWidth10,
-          Text(
-            recordData.purpose,
-            style: const TextStyle(
-              fontSize: 20,
-              // fontWeight: FontWeight.bold,
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                recordData.purpose,
+                style: const TextStyle(
+                  fontSize: 20,
+                  // fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                recordData.dateTime.toString(),
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ],
           ),
           const Spacer(),
           Text(

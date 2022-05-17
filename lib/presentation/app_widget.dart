@@ -7,6 +7,7 @@ import 'theme/theme.dart';
 
 class AppWidget extends StatelessWidget {
   AppWidget({Key? key}) : super(key: key);
+
   final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {

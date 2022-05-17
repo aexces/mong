@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //*Default Padding value
-const kDefaultPadding = 16.0;
+const defaultPadding = 16.0;
 
 //*Duration
 const kDuration2Sec = Duration(seconds: 2);

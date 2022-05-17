@@ -4,7 +4,8 @@ import 'package:mong/injectable.dart';
 
 import 'presentation/app_widget.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   configureInjection(Environment.prod);
   runApp(AppWidget());
 }
