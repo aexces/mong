@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:mong/core/constants.dart';
 import 'package:mong/presentation/pages/main/widgets/radio_buttons.dart';
+import 'package:mong/presentation/widgets/default_button.dart';
 
 import '../../../../core/colors.dart';
 
@@ -11,7 +13,6 @@ Future<dynamic> buildModalBottomSheet(BuildContext context) {
     backgroundColor: Colors.transparent,
     builder: (context) {
       return Container(
-        height: double.infinity,
         margin: const EdgeInsets.only(top: 200),
         padding: const EdgeInsets.all(defaultPadding * 1.5),
         decoration: const BoxDecoration(
@@ -36,6 +37,7 @@ Future<dynamic> buildModalBottomSheet(BuildContext context) {
             kHeight10,
             Container(
               height: 50,
+              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
               decoration: BoxDecoration(
                 borderRadius: kRadius10,
                 color: kWhiteColor,
@@ -50,7 +52,23 @@ Future<dynamic> buildModalBottomSheet(BuildContext context) {
                   )
                 ],
               ),
-              child: TextFormField(),
+              child: TextFormField(
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  hintText: "Enter amount",
+                  border: InputBorder.none,
+                ),
+                onChanged: (amount) {
+                  print(amount);
+                },
+              ),
+            ),
+            kHeight30,
+            DefaultButton(
+              text: "Submit",
+              onPressed: () {
+                context.router.pop();
+              },
             )
           ],
         ),

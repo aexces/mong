@@ -52,6 +52,12 @@ final List<RecordData> recordDataList = [
     amount: 4000,
     dateTime: DateFormat('dd-MMM-yyyy').format(DateTime.now()),
   ),
+  RecordData(
+    transactionType: TransactionType.expense,
+    purpose: "Small trip",
+    amount: 300,
+    dateTime: DateFormat('dd-MMM-yyyy').format(DateTime.now()),
+  ),
 ];
 
 class RecordData {
