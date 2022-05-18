@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mong/core/core.dart';
 
-import '../../../../core/colors.dart';
-import '../../../../core/constants.dart';
 import '../../../../data/record_data.dart';
 
 class TransactionsCard extends StatelessWidget {

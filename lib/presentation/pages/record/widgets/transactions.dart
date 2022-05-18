@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../core/colors.dart';
-import '../../../../core/constants.dart';
+import 'package:mong/core/core.dart';
 import 'transactions_list.dart';
 
 class Transactions extends StatelessWidget {

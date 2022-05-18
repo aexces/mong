@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mong/core/colors.dart';
-
-import '../../core/constants.dart';
+import 'package:mong/core/core.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({

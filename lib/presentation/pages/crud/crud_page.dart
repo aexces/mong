@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mong/core/colors.dart';
-import 'package:mong/core/constants.dart';
+import 'package:mong/core/core.dart';
+import 'package:mong/presentation/pages/crud/widgets/amount_text_field.dart';
 import 'package:mong/presentation/widgets/main_heading.dart';
 import 'package:mong/presentation/widgets/new_back_button.dart';
 
@@ -13,7 +13,7 @@ class CrudPage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 05),
-          child: ListView(
+          child: Column(
             children: [
               Row(
                 children: const [
@@ -25,15 +25,8 @@ class CrudPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
                 child: Column(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: kRedColor,
-                        borderRadius: kBorderRadius10,
-                      ),
-                    ),
+                  children: const [
+                    AmountTextField(),
                   ],
                 ),
               )

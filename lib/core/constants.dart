@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:mong/core/colors.dart';
 
 const defaultPadding = 16.0;
 const recordsDatabase = "RECORDS-DATABASE";
@@ -22,5 +23,13 @@ const kWidth20 = SizedBox(width: 20);
 final kBorderRadius10 = BorderRadius.circular(10);
 final kBorderRadius20 = BorderRadius.circular(20);
 
-//*Padding
-
+//*Shadow
+final kBoxShadow = BoxShadow(
+  color: kBlackColor.withOpacity(0.4),
+  blurRadius: 7, // soften the shadow
+  spreadRadius: 0.2, //extend the shadow
+  offset: const Offset(
+    4, // Move to right 10  horizontally
+    2, // Move to bottom 10 Vertically
+  ),
+);
