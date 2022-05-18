@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mong/application/crud/crud_bloc.dart';
 import 'package:mong/application/main/main_bloc.dart';
+import 'package:mong/application/records/records_bloc.dart';
+import 'package:mong/injectable.dart';
 import '../application/splash/splash_cubit.dart';
 import 'router/app_router.gr.dart';
 import 'theme/theme.dart';
@@ -18,6 +21,12 @@ class AppWidget extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => MainBloc(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<RecordsBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => CrudBloc(),
         ),
       ],
       child: MaterialApp.router(

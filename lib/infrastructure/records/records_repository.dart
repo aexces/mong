@@ -1,8 +1,11 @@
 import 'package:hive_flutter/adapters.dart';
+import 'package:injectable/injectable.dart';
 import 'package:mong/core/constants.dart';
 import 'package:mong/domain/i_records_repository.dart';
 import 'package:mong/domain/records/records.dart';
 
+@Injectable(as: IRecordRepository)
+@prod
 class RecordsRepository implements IRecordRepository {
   @override
   Future<List<Records>> getRecords() async {

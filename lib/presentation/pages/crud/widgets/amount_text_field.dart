@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mong/application/crud/crud_bloc.dart';
 import 'package:mong/core/core.dart';
 
 class AmountTextField extends StatelessWidget {
@@ -19,11 +21,29 @@ class AmountTextField extends StatelessWidget {
         borderRadius: kBorderRadius10,
         boxShadow: [kBoxShadow],
       ),
-      child: TextFormField(
-        decoration: const InputDecoration(
-          border: InputBorder.none,
-          hintText: "Amount",
-        ),
+      child: BlocBuilder<CrudBloc, CrudState>(
+        builder: (context, state) {
+          return TextFormField(
+            cursorColor: kPrimaryColor,
+            keyboardType: TextInputType.number,
+            decoration: const InputDecoration(
+              border: InputBorder.none,
+              hintText: "Amount",
+            ),
+            validator: (value) {
+              if (value == null) {
+                return "Amount can't be empty";
+              }
+              return null;
+            },
+            onChanged: (value) {
+              final amount = int.parse(value);
+              context.read<CrudBloc>().add(
+                    CrudEvent.amountUpdated(amount),
+                  );
+            },
+          );
+        },
       ),
     );
   }

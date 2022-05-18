@@ -18,8 +18,26 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CrudEventTearOff {
   const _$CrudEventTearOff();
 
-  _Started started() {
-    return const _Started();
+  _RecordsTypeUpdated recordsTypeUpdated(RecordsType recordsType) {
+    return _RecordsTypeUpdated(
+      recordsType,
+    );
+  }
+
+  _PurposeUpdated purposeUpdated(String purpose) {
+    return _PurposeUpdated(
+      purpose,
+    );
+  }
+
+  _AmountUpdated amountUpdated(int amount) {
+    return _AmountUpdated(
+      amount,
+    );
+  }
+
+  _SubmitButtonPressed submitButtonPressed() {
+    return const _SubmitButtonPressed();
   }
 }
 
@@ -30,33 +48,51 @@ const $CrudEvent = _$CrudEventTearOff();
 mixin _$CrudEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(RecordsType recordsType) recordsTypeUpdated,
+    required TResult Function(String purpose) purposeUpdated,
+    required TResult Function(int amount) amountUpdated,
+    required TResult Function() submitButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_RecordsTypeUpdated value) recordsTypeUpdated,
+    required TResult Function(_PurposeUpdated value) purposeUpdated,
+    required TResult Function(_AmountUpdated value) amountUpdated,
+    required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,35 +114,476 @@ class _$CrudEventCopyWithImpl<$Res> implements $CrudEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
+abstract class _$RecordsTypeUpdatedCopyWith<$Res> {
+  factory _$RecordsTypeUpdatedCopyWith(
+          _RecordsTypeUpdated value, $Res Function(_RecordsTypeUpdated) then) =
+      __$RecordsTypeUpdatedCopyWithImpl<$Res>;
+  $Res call({RecordsType recordsType});
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$CrudEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
+class __$RecordsTypeUpdatedCopyWithImpl<$Res>
+    extends _$CrudEventCopyWithImpl<$Res>
+    implements _$RecordsTypeUpdatedCopyWith<$Res> {
+  __$RecordsTypeUpdatedCopyWithImpl(
+      _RecordsTypeUpdated _value, $Res Function(_RecordsTypeUpdated) _then)
+      : super(_value, (v) => _then(v as _RecordsTypeUpdated));
 
   @override
-  _Started get _value => super._value as _Started;
+  _RecordsTypeUpdated get _value => super._value as _RecordsTypeUpdated;
+
+  @override
+  $Res call({
+    Object? recordsType = freezed,
+  }) {
+    return _then(_RecordsTypeUpdated(
+      recordsType == freezed
+          ? _value.recordsType
+          : recordsType // ignore: cast_nullable_to_non_nullable
+              as RecordsType,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_RecordsTypeUpdated implements _RecordsTypeUpdated {
+  const _$_RecordsTypeUpdated(this.recordsType);
+
+  @override
+  final RecordsType recordsType;
 
   @override
   String toString() {
-    return 'CrudEvent.started()';
+    return 'CrudEvent.recordsTypeUpdated(recordsType: $recordsType)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Started);
+        (other.runtimeType == runtimeType &&
+            other is _RecordsTypeUpdated &&
+            const DeepCollectionEquality()
+                .equals(other.recordsType, recordsType));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(recordsType));
+
+  @JsonKey(ignore: true)
+  @override
+  _$RecordsTypeUpdatedCopyWith<_RecordsTypeUpdated> get copyWith =>
+      __$RecordsTypeUpdatedCopyWithImpl<_RecordsTypeUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RecordsType recordsType) recordsTypeUpdated,
+    required TResult Function(String purpose) purposeUpdated,
+    required TResult Function(int amount) amountUpdated,
+    required TResult Function() submitButtonPressed,
+  }) {
+    return recordsTypeUpdated(recordsType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
+  }) {
+    return recordsTypeUpdated?.call(recordsType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
+    required TResult orElse(),
+  }) {
+    if (recordsTypeUpdated != null) {
+      return recordsTypeUpdated(recordsType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RecordsTypeUpdated value) recordsTypeUpdated,
+    required TResult Function(_PurposeUpdated value) purposeUpdated,
+    required TResult Function(_AmountUpdated value) amountUpdated,
+    required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
+  }) {
+    return recordsTypeUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+  }) {
+    return recordsTypeUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    required TResult orElse(),
+  }) {
+    if (recordsTypeUpdated != null) {
+      return recordsTypeUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RecordsTypeUpdated implements CrudEvent {
+  const factory _RecordsTypeUpdated(RecordsType recordsType) =
+      _$_RecordsTypeUpdated;
+
+  RecordsType get recordsType;
+  @JsonKey(ignore: true)
+  _$RecordsTypeUpdatedCopyWith<_RecordsTypeUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PurposeUpdatedCopyWith<$Res> {
+  factory _$PurposeUpdatedCopyWith(
+          _PurposeUpdated value, $Res Function(_PurposeUpdated) then) =
+      __$PurposeUpdatedCopyWithImpl<$Res>;
+  $Res call({String purpose});
+}
+
+/// @nodoc
+class __$PurposeUpdatedCopyWithImpl<$Res> extends _$CrudEventCopyWithImpl<$Res>
+    implements _$PurposeUpdatedCopyWith<$Res> {
+  __$PurposeUpdatedCopyWithImpl(
+      _PurposeUpdated _value, $Res Function(_PurposeUpdated) _then)
+      : super(_value, (v) => _then(v as _PurposeUpdated));
+
+  @override
+  _PurposeUpdated get _value => super._value as _PurposeUpdated;
+
+  @override
+  $Res call({
+    Object? purpose = freezed,
+  }) {
+    return _then(_PurposeUpdated(
+      purpose == freezed
+          ? _value.purpose
+          : purpose // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PurposeUpdated implements _PurposeUpdated {
+  const _$_PurposeUpdated(this.purpose);
+
+  @override
+  final String purpose;
+
+  @override
+  String toString() {
+    return 'CrudEvent.purposeUpdated(purpose: $purpose)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PurposeUpdated &&
+            const DeepCollectionEquality().equals(other.purpose, purpose));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(purpose));
+
+  @JsonKey(ignore: true)
+  @override
+  _$PurposeUpdatedCopyWith<_PurposeUpdated> get copyWith =>
+      __$PurposeUpdatedCopyWithImpl<_PurposeUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RecordsType recordsType) recordsTypeUpdated,
+    required TResult Function(String purpose) purposeUpdated,
+    required TResult Function(int amount) amountUpdated,
+    required TResult Function() submitButtonPressed,
+  }) {
+    return purposeUpdated(purpose);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
+  }) {
+    return purposeUpdated?.call(purpose);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
+    required TResult orElse(),
+  }) {
+    if (purposeUpdated != null) {
+      return purposeUpdated(purpose);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RecordsTypeUpdated value) recordsTypeUpdated,
+    required TResult Function(_PurposeUpdated value) purposeUpdated,
+    required TResult Function(_AmountUpdated value) amountUpdated,
+    required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
+  }) {
+    return purposeUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+  }) {
+    return purposeUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    required TResult orElse(),
+  }) {
+    if (purposeUpdated != null) {
+      return purposeUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PurposeUpdated implements CrudEvent {
+  const factory _PurposeUpdated(String purpose) = _$_PurposeUpdated;
+
+  String get purpose;
+  @JsonKey(ignore: true)
+  _$PurposeUpdatedCopyWith<_PurposeUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$AmountUpdatedCopyWith<$Res> {
+  factory _$AmountUpdatedCopyWith(
+          _AmountUpdated value, $Res Function(_AmountUpdated) then) =
+      __$AmountUpdatedCopyWithImpl<$Res>;
+  $Res call({int amount});
+}
+
+/// @nodoc
+class __$AmountUpdatedCopyWithImpl<$Res> extends _$CrudEventCopyWithImpl<$Res>
+    implements _$AmountUpdatedCopyWith<$Res> {
+  __$AmountUpdatedCopyWithImpl(
+      _AmountUpdated _value, $Res Function(_AmountUpdated) _then)
+      : super(_value, (v) => _then(v as _AmountUpdated));
+
+  @override
+  _AmountUpdated get _value => super._value as _AmountUpdated;
+
+  @override
+  $Res call({
+    Object? amount = freezed,
+  }) {
+    return _then(_AmountUpdated(
+      amount == freezed
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_AmountUpdated implements _AmountUpdated {
+  const _$_AmountUpdated(this.amount);
+
+  @override
+  final int amount;
+
+  @override
+  String toString() {
+    return 'CrudEvent.amountUpdated(amount: $amount)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AmountUpdated &&
+            const DeepCollectionEquality().equals(other.amount, amount));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(amount));
+
+  @JsonKey(ignore: true)
+  @override
+  _$AmountUpdatedCopyWith<_AmountUpdated> get copyWith =>
+      __$AmountUpdatedCopyWithImpl<_AmountUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RecordsType recordsType) recordsTypeUpdated,
+    required TResult Function(String purpose) purposeUpdated,
+    required TResult Function(int amount) amountUpdated,
+    required TResult Function() submitButtonPressed,
+  }) {
+    return amountUpdated(amount);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
+  }) {
+    return amountUpdated?.call(amount);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
+    required TResult orElse(),
+  }) {
+    if (amountUpdated != null) {
+      return amountUpdated(amount);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RecordsTypeUpdated value) recordsTypeUpdated,
+    required TResult Function(_PurposeUpdated value) purposeUpdated,
+    required TResult Function(_AmountUpdated value) amountUpdated,
+    required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
+  }) {
+    return amountUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+  }) {
+    return amountUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    required TResult orElse(),
+  }) {
+    if (amountUpdated != null) {
+      return amountUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AmountUpdated implements CrudEvent {
+  const factory _AmountUpdated(int amount) = _$_AmountUpdated;
+
+  int get amount;
+  @JsonKey(ignore: true)
+  _$AmountUpdatedCopyWith<_AmountUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SubmitButtonPressedCopyWith<$Res> {
+  factory _$SubmitButtonPressedCopyWith(_SubmitButtonPressed value,
+          $Res Function(_SubmitButtonPressed) then) =
+      __$SubmitButtonPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SubmitButtonPressedCopyWithImpl<$Res>
+    extends _$CrudEventCopyWithImpl<$Res>
+    implements _$SubmitButtonPressedCopyWith<$Res> {
+  __$SubmitButtonPressedCopyWithImpl(
+      _SubmitButtonPressed _value, $Res Function(_SubmitButtonPressed) _then)
+      : super(_value, (v) => _then(v as _SubmitButtonPressed));
+
+  @override
+  _SubmitButtonPressed get _value => super._value as _SubmitButtonPressed;
+}
+
+/// @nodoc
+
+class _$_SubmitButtonPressed implements _SubmitButtonPressed {
+  const _$_SubmitButtonPressed();
+
+  @override
+  String toString() {
+    return 'CrudEvent.submitButtonPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SubmitButtonPressed);
   }
 
   @override
@@ -115,27 +592,36 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(RecordsType recordsType) recordsTypeUpdated,
+    required TResult Function(String purpose) purposeUpdated,
+    required TResult Function(int amount) amountUpdated,
+    required TResult Function() submitButtonPressed,
   }) {
-    return started();
+    return submitButtonPressed();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
   }) {
-    return started?.call();
+    return submitButtonPressed?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (submitButtonPressed != null) {
+      return submitButtonPressed();
     }
     return orElse();
   }
@@ -143,42 +629,58 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_RecordsTypeUpdated value) recordsTypeUpdated,
+    required TResult Function(_PurposeUpdated value) purposeUpdated,
+    required TResult Function(_AmountUpdated value) amountUpdated,
+    required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
   }) {
-    return started(this);
+    return submitButtonPressed(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
   }) {
-    return started?.call(this);
+    return submitButtonPressed?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (submitButtonPressed != null) {
+      return submitButtonPressed(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements CrudEvent {
-  const factory _Started() = _$_Started;
+abstract class _SubmitButtonPressed implements CrudEvent {
+  const factory _SubmitButtonPressed() = _$_SubmitButtonPressed;
 }
 
 /// @nodoc
 class _$CrudStateTearOff {
   const _$CrudStateTearOff();
 
-  _Initial initial() {
-    return const _Initial();
+  _CrudState call(
+      {required RecordsType recordsType,
+      required int amount,
+      required String purpose}) {
+    return _CrudState(
+      recordsType: recordsType,
+      amount: amount,
+      purpose: purpose,
+    );
   }
 }
 
@@ -187,37 +689,12 @@ const $CrudState = _$CrudStateTearOff();
 
 /// @nodoc
 mixin _$CrudState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
+  RecordsType get recordsType => throw _privateConstructorUsedError;
+  int get amount => throw _privateConstructorUsedError;
+  String get purpose => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CrudStateCopyWith<CrudState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -225,6 +702,7 @@ mixin _$CrudState {
 abstract class $CrudStateCopyWith<$Res> {
   factory $CrudStateCopyWith(CrudState value, $Res Function(CrudState) then) =
       _$CrudStateCopyWithImpl<$Res>;
+  $Res call({RecordsType recordsType, int amount, String purpose});
 }
 
 /// @nodoc
@@ -234,100 +712,127 @@ class _$CrudStateCopyWithImpl<$Res> implements $CrudStateCopyWith<$Res> {
   final CrudState _value;
   // ignore: unused_field
   final $Res Function(CrudState) _then;
-}
-
-/// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$CrudStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  $Res call({
+    Object? recordsType = freezed,
+    Object? amount = freezed,
+    Object? purpose = freezed,
+  }) {
+    return _then(_value.copyWith(
+      recordsType: recordsType == freezed
+          ? _value.recordsType
+          : recordsType // ignore: cast_nullable_to_non_nullable
+              as RecordsType,
+      amount: amount == freezed
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      purpose: purpose == freezed
+          ? _value.purpose
+          : purpose // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$CrudStateCopyWith<$Res> implements $CrudStateCopyWith<$Res> {
+  factory _$CrudStateCopyWith(
+          _CrudState value, $Res Function(_CrudState) then) =
+      __$CrudStateCopyWithImpl<$Res>;
+  @override
+  $Res call({RecordsType recordsType, int amount, String purpose});
+}
+
+/// @nodoc
+class __$CrudStateCopyWithImpl<$Res> extends _$CrudStateCopyWithImpl<$Res>
+    implements _$CrudStateCopyWith<$Res> {
+  __$CrudStateCopyWithImpl(_CrudState _value, $Res Function(_CrudState) _then)
+      : super(_value, (v) => _then(v as _CrudState));
+
+  @override
+  _CrudState get _value => super._value as _CrudState;
+
+  @override
+  $Res call({
+    Object? recordsType = freezed,
+    Object? amount = freezed,
+    Object? purpose = freezed,
+  }) {
+    return _then(_CrudState(
+      recordsType: recordsType == freezed
+          ? _value.recordsType
+          : recordsType // ignore: cast_nullable_to_non_nullable
+              as RecordsType,
+      amount: amount == freezed
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      purpose: purpose == freezed
+          ? _value.purpose
+          : purpose // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_CrudState implements _CrudState {
+  const _$_CrudState(
+      {required this.recordsType, required this.amount, required this.purpose});
+
+  @override
+  final RecordsType recordsType;
+  @override
+  final int amount;
+  @override
+  final String purpose;
 
   @override
   String toString() {
-    return 'CrudState.initial()';
+    return 'CrudState(recordsType: $recordsType, amount: $amount, purpose: $purpose)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType &&
+            other is _CrudState &&
+            const DeepCollectionEquality()
+                .equals(other.recordsType, recordsType) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            const DeepCollectionEquality().equals(other.purpose, purpose));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(recordsType),
+      const DeepCollectionEquality().hash(amount),
+      const DeepCollectionEquality().hash(purpose));
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  _$CrudStateCopyWith<_CrudState> get copyWith =>
+      __$CrudStateCopyWithImpl<_CrudState>(this, _$identity);
 }
 
-abstract class _Initial implements CrudState {
-  const factory _Initial() = _$_Initial;
+abstract class _CrudState implements CrudState {
+  const factory _CrudState(
+      {required RecordsType recordsType,
+      required int amount,
+      required String purpose}) = _$_CrudState;
+
+  @override
+  RecordsType get recordsType;
+  @override
+  int get amount;
+  @override
+  String get purpose;
+  @override
+  @JsonKey(ignore: true)
+  _$CrudStateCopyWith<_CrudState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
