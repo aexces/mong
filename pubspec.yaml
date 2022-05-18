@@ -36,6 +36,8 @@ dependencies:
   flutter_bloc: ^8.0.1
   freezed_annotation: ^1.1.0
   get_it: ^7.2.0
+  hive: ^2.2.0
+  hive_flutter: ^1.1.0
   injectable: ^1.5.3
   intl: ^0.17.0
   json_serializable: ^6.1.5
@@ -47,6 +49,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^1.1.1
+  hive_generator: ^1.1.2
   injectable_generator: ^1.5.3
 
 # For information on the generic Dart part of this file, see the

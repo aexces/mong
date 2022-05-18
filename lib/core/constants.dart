@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 const defaultPadding = 16.0;
+const recordsDatabase = "RECORDS-DATABASE";
 
 //*Duration
 const kDuration1 = Duration(seconds: 1);
@@ -8,6 +9,7 @@ const kDuration2 = Duration(seconds: 2);
 const kDuration3 = Duration(seconds: 3);
 
 //*Height
+const kHeight05 = SizedBox(height: 05);
 const kHeight10 = SizedBox(height: 10);
 const kHeight20 = SizedBox(height: 20);
 const kHeight30 = SizedBox(height: 30);

@@ -1,31 +1,36 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mong/application/main/main_bloc.dart';
+import 'package:mong/presentation/pages/crud/crud_page.dart';
 import 'package:mong/presentation/pages/main/widgets/curved_bar.dart';
 import 'package:mong/presentation/pages/main/widgets/lists.dart';
-
-import '../../../application/main/main_bloc.dart';
+import 'package:mong/presentation/router/app_router.gr.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: BlocBuilder<MainBloc, MainState>(
-          builder: (context, state) {
-            return bodyLit[state.bottomNavigationIndex];
-          },
-        ),
-      ),
-      bottomNavigationBar: const CurvedBar(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          // final expense = await RecordData.calculateExpense(recordDataList);
-          // print(expense.toString());
-        },
-        child: const Icon(Icons.add),
-      ),
+    return BlocBuilder<MainBloc, MainState>(
+      builder: (context, state) {
+        return Scaffold(
+          body: SafeArea(
+            child: bodyLit[state.bottomNavigationIndex],
+          ),
+          bottomNavigationBar: const CurvedBar(),
+          floatingActionButton: state.bottomNavigationIndex == 0
+              ? FloatingActionButton(
+                  onPressed: () async {
+                    // final expense = await RecordData.calculateExpense(recordDataList);
+                    // print(expense.toString());
+                    context.router.push(const CrudRoute());
+                  },
+                  child: const Icon(Icons.add),
+                )
+              : null,
+        );
+      },
     );
   }
 }

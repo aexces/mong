@@ -9,10 +9,10 @@ class MainHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Records",
-      style: TextStyle(
-        fontSize: 35,
+    return Text(
+      heading,
+      style: const TextStyle(
+        fontSize: 30,
         letterSpacing: 1,
         overflow: TextOverflow.ellipsis,
         fontFamily: "SourceSansPro",

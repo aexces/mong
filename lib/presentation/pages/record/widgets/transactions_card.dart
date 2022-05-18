@@ -31,7 +31,7 @@ class TransactionsCard extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
-            radius: 30,
+            radius: 25,
             backgroundColor:
                 recordData.transactionType == TransactionType.expense
                     ? kRedColor.withOpacity(0.9)
@@ -49,6 +49,7 @@ class TransactionsCard extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
+              kHeight05,
               Text(
                 recordData.dateTime.toString(),
                 style: const TextStyle(
