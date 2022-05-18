@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -14,23 +16,29 @@ class RecordsBloc extends Bloc<RecordsEvent, RecordsState> {
   final IRecordRepository recordRepository;
   RecordsBloc(this.recordRepository) : super(RecordsState.initial()) {
     on<_GetRecords>((event, emit) async {
+      int _totalExpense = 0;
+      int _totalIncome = 0;
       emit(state.copyWith(
         isProcessing: true,
       ));
       final _records = await recordRepository.getRecords();
+      _records.map((e) {
+        if (e.recordsType == RecordsType.income) {
+          _totalIncome = _totalIncome + e.amount;
+        }
+      }).toList();
+      _records.map((e) {
+        if (e.recordsType == RecordsType.expense) {
+          _totalExpense = _totalExpense + e.amount;
+        }
+      }).toList();
       emit(state.copyWith(
         isProcessing: false,
         records: _records,
+        totalExpense: _totalExpense,
+        totalIncome: _totalIncome,
       ));
-    });
-    on<_AddRecords>((event, emit) async {
-      emit(state.copyWith(
-        isProcessing: true,
-      ));
-      await recordRepository.addRecords(event.records);
-      emit(state.copyWith(
-        isProcessing: false,
-      ));
+      log(state.records!.length.toString());
     });
   }
 }

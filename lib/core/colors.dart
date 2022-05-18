@@ -5,4 +5,5 @@ const kGreyColor = Colors.grey;
 const kPrimaryColor = Color(0xFF29384D);
 const kRedColor = Colors.red;
 const kGreenColor = Colors.green;
+const kLigtGreenColor = Colors.lightGreen;
 const kBlackColor = Colors.black;

@@ -23,10 +23,13 @@ class AppWidget extends StatelessWidget {
           create: (context) => MainBloc(),
         ),
         BlocProvider(
-          create: (context) => getIt<RecordsBloc>(),
+          create: (context) => getIt<RecordsBloc>()
+            ..add(
+              const RecordsEvent.getRecords(),
+            ),
         ),
         BlocProvider(
-          create: (context) => CrudBloc(),
+          create: (context) => getIt<CrudBloc>(),
         ),
       ],
       child: MaterialApp.router(

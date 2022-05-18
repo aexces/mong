@@ -17,21 +17,24 @@ class RecordsAdapter extends TypeAdapter<Records> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Records(
-      purpose: fields[0] as String,
-      amount: fields[1] as int,
-      recordsType: fields[2] as RecordsType,
+      id: fields[0] as String,
+      purpose: fields[1] as String,
+      amount: fields[2] as int,
+      recordsType: fields[3] as RecordsType,
     );
   }
 
   @override
   void write(BinaryWriter writer, Records obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
-      ..write(obj.purpose)
+      ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.amount)
+      ..write(obj.purpose)
       ..writeByte(2)
+      ..write(obj.amount)
+      ..writeByte(3)
       ..write(obj.recordsType);
   }
 

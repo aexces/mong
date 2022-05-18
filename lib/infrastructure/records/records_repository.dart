@@ -13,10 +13,4 @@ class RecordsRepository implements IRecordRepository {
     final _recordsList = _recordsBox.values.toList();
     return _recordsList;
   }
-
-  @override
-  Future<void> addRecords(Records records) async {
-    final _recordsBox = await Hive.openBox<Records>(recordsDatabase);
-    await _recordsBox.add(records);
-  }
 }

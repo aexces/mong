@@ -673,10 +673,12 @@ class _$CrudStateTearOff {
   const _$CrudStateTearOff();
 
   _CrudState call(
-      {required RecordsType recordsType,
+      {required bool isProcessing,
+      required RecordsType recordsType,
       required int amount,
       required String purpose}) {
     return _CrudState(
+      isProcessing: isProcessing,
       recordsType: recordsType,
       amount: amount,
       purpose: purpose,
@@ -689,6 +691,7 @@ const $CrudState = _$CrudStateTearOff();
 
 /// @nodoc
 mixin _$CrudState {
+  bool get isProcessing => throw _privateConstructorUsedError;
   RecordsType get recordsType => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
   String get purpose => throw _privateConstructorUsedError;
@@ -702,7 +705,8 @@ mixin _$CrudState {
 abstract class $CrudStateCopyWith<$Res> {
   factory $CrudStateCopyWith(CrudState value, $Res Function(CrudState) then) =
       _$CrudStateCopyWithImpl<$Res>;
-  $Res call({RecordsType recordsType, int amount, String purpose});
+  $Res call(
+      {bool isProcessing, RecordsType recordsType, int amount, String purpose});
 }
 
 /// @nodoc
@@ -715,11 +719,16 @@ class _$CrudStateCopyWithImpl<$Res> implements $CrudStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? isProcessing = freezed,
     Object? recordsType = freezed,
     Object? amount = freezed,
     Object? purpose = freezed,
   }) {
     return _then(_value.copyWith(
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
+              as bool,
       recordsType: recordsType == freezed
           ? _value.recordsType
           : recordsType // ignore: cast_nullable_to_non_nullable
@@ -742,7 +751,8 @@ abstract class _$CrudStateCopyWith<$Res> implements $CrudStateCopyWith<$Res> {
           _CrudState value, $Res Function(_CrudState) then) =
       __$CrudStateCopyWithImpl<$Res>;
   @override
-  $Res call({RecordsType recordsType, int amount, String purpose});
+  $Res call(
+      {bool isProcessing, RecordsType recordsType, int amount, String purpose});
 }
 
 /// @nodoc
@@ -756,11 +766,16 @@ class __$CrudStateCopyWithImpl<$Res> extends _$CrudStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? isProcessing = freezed,
     Object? recordsType = freezed,
     Object? amount = freezed,
     Object? purpose = freezed,
   }) {
     return _then(_CrudState(
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
+              as bool,
       recordsType: recordsType == freezed
           ? _value.recordsType
           : recordsType // ignore: cast_nullable_to_non_nullable
@@ -781,8 +796,13 @@ class __$CrudStateCopyWithImpl<$Res> extends _$CrudStateCopyWithImpl<$Res>
 
 class _$_CrudState implements _CrudState {
   const _$_CrudState(
-      {required this.recordsType, required this.amount, required this.purpose});
+      {required this.isProcessing,
+      required this.recordsType,
+      required this.amount,
+      required this.purpose});
 
+  @override
+  final bool isProcessing;
   @override
   final RecordsType recordsType;
   @override
@@ -792,7 +812,7 @@ class _$_CrudState implements _CrudState {
 
   @override
   String toString() {
-    return 'CrudState(recordsType: $recordsType, amount: $amount, purpose: $purpose)';
+    return 'CrudState(isProcessing: $isProcessing, recordsType: $recordsType, amount: $amount, purpose: $purpose)';
   }
 
   @override
@@ -800,6 +820,8 @@ class _$_CrudState implements _CrudState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _CrudState &&
+            const DeepCollectionEquality()
+                .equals(other.isProcessing, isProcessing) &&
             const DeepCollectionEquality()
                 .equals(other.recordsType, recordsType) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
@@ -809,6 +831,7 @@ class _$_CrudState implements _CrudState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(isProcessing),
       const DeepCollectionEquality().hash(recordsType),
       const DeepCollectionEquality().hash(amount),
       const DeepCollectionEquality().hash(purpose));
@@ -821,10 +844,13 @@ class _$_CrudState implements _CrudState {
 
 abstract class _CrudState implements CrudState {
   const factory _CrudState(
-      {required RecordsType recordsType,
+      {required bool isProcessing,
+      required RecordsType recordsType,
       required int amount,
       required String purpose}) = _$_CrudState;
 
+  @override
+  bool get isProcessing;
   @override
   RecordsType get recordsType;
   @override

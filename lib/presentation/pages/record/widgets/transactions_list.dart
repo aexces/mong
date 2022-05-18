@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mong/application/records/records_bloc.dart';
 import 'package:mong/core/constants.dart';
-import 'package:mong/data/record_data.dart';
 import 'package:mong/presentation/pages/record/widgets/transactions_card.dart';
 
 class TransactionsList extends StatelessWidget {
@@ -21,13 +22,17 @@ class TransactionsList extends StatelessWidget {
             borderRadius: kBorderRadius10,
           ),
         ),
-        ListView.builder(
-          shrinkWrap: true,
-          itemCount: recordDataList.length,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return TransactionsCard(
-              recordData: recordDataList[index],
+        BlocBuilder<RecordsBloc, RecordsState>(
+          builder: (context, state) {
+            return ListView.builder(
+              shrinkWrap: true,
+              itemCount: state.records!.length,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return TransactionsCard(
+                  records: state.records![index],
+                );
+              },
             );
           },
         ),

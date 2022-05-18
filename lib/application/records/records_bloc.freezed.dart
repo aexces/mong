@@ -21,12 +21,6 @@ class _$RecordsEventTearOff {
   _GetRecords getRecords() {
     return const _GetRecords();
   }
-
-  _AddRecords addRecords(Records records) {
-    return _AddRecords(
-      records,
-    );
-  }
 }
 
 /// @nodoc
@@ -37,38 +31,32 @@ mixin _$RecordsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRecords,
-    required TResult Function(Records records) addRecords,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRecords,
-    TResult Function(Records records)? addRecords,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRecords,
-    TResult Function(Records records)? addRecords,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetRecords value) getRecords,
-    required TResult Function(_AddRecords value) addRecords,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetRecords value)? getRecords,
-    TResult Function(_AddRecords value)? addRecords,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetRecords value)? getRecords,
-    TResult Function(_AddRecords value)? addRecords,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,7 +119,6 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRecords,
-    required TResult Function(Records records) addRecords,
   }) {
     return getRecords();
   }
@@ -140,7 +127,6 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRecords,
-    TResult Function(Records records)? addRecords,
   }) {
     return getRecords?.call();
   }
@@ -149,7 +135,6 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRecords,
-    TResult Function(Records records)? addRecords,
     required TResult orElse(),
   }) {
     if (getRecords != null) {
@@ -162,7 +147,6 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetRecords value) getRecords,
-    required TResult Function(_AddRecords value) addRecords,
   }) {
     return getRecords(this);
   }
@@ -171,7 +155,6 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetRecords value)? getRecords,
-    TResult Function(_AddRecords value)? addRecords,
   }) {
     return getRecords?.call(this);
   }
@@ -180,7 +163,6 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetRecords value)? getRecords,
-    TResult Function(_AddRecords value)? addRecords,
     required TResult orElse(),
   }) {
     if (getRecords != null) {
@@ -195,146 +177,19 @@ abstract class _GetRecords implements RecordsEvent {
 }
 
 /// @nodoc
-abstract class _$AddRecordsCopyWith<$Res> {
-  factory _$AddRecordsCopyWith(
-          _AddRecords value, $Res Function(_AddRecords) then) =
-      __$AddRecordsCopyWithImpl<$Res>;
-  $Res call({Records records});
-}
-
-/// @nodoc
-class __$AddRecordsCopyWithImpl<$Res> extends _$RecordsEventCopyWithImpl<$Res>
-    implements _$AddRecordsCopyWith<$Res> {
-  __$AddRecordsCopyWithImpl(
-      _AddRecords _value, $Res Function(_AddRecords) _then)
-      : super(_value, (v) => _then(v as _AddRecords));
-
-  @override
-  _AddRecords get _value => super._value as _AddRecords;
-
-  @override
-  $Res call({
-    Object? records = freezed,
-  }) {
-    return _then(_AddRecords(
-      records == freezed
-          ? _value.records
-          : records // ignore: cast_nullable_to_non_nullable
-              as Records,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_AddRecords implements _AddRecords {
-  const _$_AddRecords(this.records);
-
-  @override
-  final Records records;
-
-  @override
-  String toString() {
-    return 'RecordsEvent.addRecords(records: $records)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AddRecords &&
-            const DeepCollectionEquality().equals(other.records, records));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(records));
-
-  @JsonKey(ignore: true)
-  @override
-  _$AddRecordsCopyWith<_AddRecords> get copyWith =>
-      __$AddRecordsCopyWithImpl<_AddRecords>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getRecords,
-    required TResult Function(Records records) addRecords,
-  }) {
-    return addRecords(records);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getRecords,
-    TResult Function(Records records)? addRecords,
-  }) {
-    return addRecords?.call(records);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getRecords,
-    TResult Function(Records records)? addRecords,
-    required TResult orElse(),
-  }) {
-    if (addRecords != null) {
-      return addRecords(records);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetRecords value) getRecords,
-    required TResult Function(_AddRecords value) addRecords,
-  }) {
-    return addRecords(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetRecords value)? getRecords,
-    TResult Function(_AddRecords value)? addRecords,
-  }) {
-    return addRecords?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetRecords value)? getRecords,
-    TResult Function(_AddRecords value)? addRecords,
-    required TResult orElse(),
-  }) {
-    if (addRecords != null) {
-      return addRecords(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AddRecords implements RecordsEvent {
-  const factory _AddRecords(Records records) = _$_AddRecords;
-
-  Records get records;
-  @JsonKey(ignore: true)
-  _$AddRecordsCopyWith<_AddRecords> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 class _$RecordsStateTearOff {
   const _$RecordsStateTearOff();
 
-  _RecordsState call({required bool isProcessing, List<Records>? records}) {
+  _RecordsState call(
+      {required bool isProcessing,
+      List<Records>? records,
+      required int totalExpense,
+      required int totalIncome}) {
     return _RecordsState(
       isProcessing: isProcessing,
       records: records,
+      totalExpense: totalExpense,
+      totalIncome: totalIncome,
     );
   }
 }
@@ -346,6 +201,8 @@ const $RecordsState = _$RecordsStateTearOff();
 mixin _$RecordsState {
   bool get isProcessing => throw _privateConstructorUsedError;
   List<Records>? get records => throw _privateConstructorUsedError;
+  int get totalExpense => throw _privateConstructorUsedError;
+  int get totalIncome => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RecordsStateCopyWith<RecordsState> get copyWith =>
@@ -357,7 +214,11 @@ abstract class $RecordsStateCopyWith<$Res> {
   factory $RecordsStateCopyWith(
           RecordsState value, $Res Function(RecordsState) then) =
       _$RecordsStateCopyWithImpl<$Res>;
-  $Res call({bool isProcessing, List<Records>? records});
+  $Res call(
+      {bool isProcessing,
+      List<Records>? records,
+      int totalExpense,
+      int totalIncome});
 }
 
 /// @nodoc
@@ -372,6 +233,8 @@ class _$RecordsStateCopyWithImpl<$Res> implements $RecordsStateCopyWith<$Res> {
   $Res call({
     Object? isProcessing = freezed,
     Object? records = freezed,
+    Object? totalExpense = freezed,
+    Object? totalIncome = freezed,
   }) {
     return _then(_value.copyWith(
       isProcessing: isProcessing == freezed
@@ -382,6 +245,14 @@ class _$RecordsStateCopyWithImpl<$Res> implements $RecordsStateCopyWith<$Res> {
           ? _value.records
           : records // ignore: cast_nullable_to_non_nullable
               as List<Records>?,
+      totalExpense: totalExpense == freezed
+          ? _value.totalExpense
+          : totalExpense // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalIncome: totalIncome == freezed
+          ? _value.totalIncome
+          : totalIncome // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -393,7 +264,11 @@ abstract class _$RecordsStateCopyWith<$Res>
           _RecordsState value, $Res Function(_RecordsState) then) =
       __$RecordsStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isProcessing, List<Records>? records});
+  $Res call(
+      {bool isProcessing,
+      List<Records>? records,
+      int totalExpense,
+      int totalIncome});
 }
 
 /// @nodoc
@@ -410,6 +285,8 @@ class __$RecordsStateCopyWithImpl<$Res> extends _$RecordsStateCopyWithImpl<$Res>
   $Res call({
     Object? isProcessing = freezed,
     Object? records = freezed,
+    Object? totalExpense = freezed,
+    Object? totalIncome = freezed,
   }) {
     return _then(_RecordsState(
       isProcessing: isProcessing == freezed
@@ -420,6 +297,14 @@ class __$RecordsStateCopyWithImpl<$Res> extends _$RecordsStateCopyWithImpl<$Res>
           ? _value.records
           : records // ignore: cast_nullable_to_non_nullable
               as List<Records>?,
+      totalExpense: totalExpense == freezed
+          ? _value.totalExpense
+          : totalExpense // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalIncome: totalIncome == freezed
+          ? _value.totalIncome
+          : totalIncome // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -427,16 +312,24 @@ class __$RecordsStateCopyWithImpl<$Res> extends _$RecordsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_RecordsState implements _RecordsState {
-  const _$_RecordsState({required this.isProcessing, this.records});
+  const _$_RecordsState(
+      {required this.isProcessing,
+      this.records,
+      required this.totalExpense,
+      required this.totalIncome});
 
   @override
   final bool isProcessing;
   @override
   final List<Records>? records;
+  @override
+  final int totalExpense;
+  @override
+  final int totalIncome;
 
   @override
   String toString() {
-    return 'RecordsState(isProcessing: $isProcessing, records: $records)';
+    return 'RecordsState(isProcessing: $isProcessing, records: $records, totalExpense: $totalExpense, totalIncome: $totalIncome)';
   }
 
   @override
@@ -446,14 +339,20 @@ class _$_RecordsState implements _RecordsState {
             other is _RecordsState &&
             const DeepCollectionEquality()
                 .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality().equals(other.records, records));
+            const DeepCollectionEquality().equals(other.records, records) &&
+            const DeepCollectionEquality()
+                .equals(other.totalExpense, totalExpense) &&
+            const DeepCollectionEquality()
+                .equals(other.totalIncome, totalIncome));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isProcessing),
-      const DeepCollectionEquality().hash(records));
+      const DeepCollectionEquality().hash(records),
+      const DeepCollectionEquality().hash(totalExpense),
+      const DeepCollectionEquality().hash(totalIncome));
 
   @JsonKey(ignore: true)
   @override
@@ -463,12 +362,19 @@ class _$_RecordsState implements _RecordsState {
 
 abstract class _RecordsState implements RecordsState {
   const factory _RecordsState(
-      {required bool isProcessing, List<Records>? records}) = _$_RecordsState;
+      {required bool isProcessing,
+      List<Records>? records,
+      required int totalExpense,
+      required int totalIncome}) = _$_RecordsState;
 
   @override
   bool get isProcessing;
   @override
   List<Records>? get records;
+  @override
+  int get totalExpense;
+  @override
+  int get totalIncome;
   @override
   @JsonKey(ignore: true)
   _$RecordsStateCopyWith<_RecordsState> get copyWith =>

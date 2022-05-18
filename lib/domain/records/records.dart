@@ -13,13 +13,16 @@ enum RecordsType {
 @HiveType(typeId: 2)
 class Records {
   @HiveField(0)
-  final String purpose;
+  final String id;
   @HiveField(1)
-  final int amount;
+  final String purpose;
   @HiveField(2)
+  final int amount;
+  @HiveField(3)
   final RecordsType recordsType;
 
   Records({
+    required this.id,
     required this.purpose,
     required this.amount,
     required this.recordsType,

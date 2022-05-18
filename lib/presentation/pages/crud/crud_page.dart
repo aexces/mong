@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mong/application/crud/crud_bloc.dart';
+import 'package:mong/application/records/records_bloc.dart';
 import 'package:mong/core/core.dart';
 import 'package:mong/presentation/pages/crud/widgets/amount_text_field.dart';
 import 'package:mong/presentation/pages/crud/widgets/record_type_buttons.dart';
@@ -40,9 +42,15 @@ class CrudPage extends StatelessWidget {
                     kHeight30,
                     DefaultButton(
                       text: "Submit",
-                      onPressed: () => context.read<CrudBloc>().add(
-                            const CrudEvent.submitButtonPressed(),
-                          ),
+                      onPressed: () {
+                        context.read<CrudBloc>().add(
+                              const CrudEvent.submitButtonPressed(),
+                            );
+                        context.router.pop();
+                        context.read<RecordsBloc>().add(
+                              const RecordsEvent.getRecords(),
+                            );
+                      },
                     ),
                   ],
                 ),

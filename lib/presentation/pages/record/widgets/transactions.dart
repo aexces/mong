@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mong/application/records/records_bloc.dart';
 import 'package:mong/core/core.dart';
 import 'transactions_list.dart';
 
@@ -9,23 +11,44 @@ class Transactions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(defaultPadding),
-      width: double.infinity,
-      decoration: BoxDecoration(
-          color: kWhiteColor,
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: kBlackColor.withOpacity(0.2),
-              offset: const Offset(0, 0),
-              blurRadius: 40,
-            )
-          ]),
-      child: const TransactionsList(),
+    return BlocBuilder<RecordsBloc, RecordsState>(
+      builder: (context, state) {
+        if (state.isProcessing) {
+          return const Center(
+            child: CircularProgressIndicator(
+              color: kPrimaryColor,
+            ),
+          );
+        }
+        if (state.records == null || state.records!.isEmpty) {
+          return Center(
+            child: Column(
+              children: const [
+                kHeight20,
+                Text("No records"),
+              ],
+            ),
+          );
+        }
+        return Container(
+          padding: const EdgeInsets.all(defaultPadding),
+          width: double.infinity,
+          decoration: BoxDecoration(
+              color: kWhiteColor,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: kBlackColor.withOpacity(0.08),
+                  offset: const Offset(0, -30),
+                  blurRadius: 30,
+                )
+              ]),
+          child: const TransactionsList(),
+        );
+      },
     );
   }
 }
