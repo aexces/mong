@@ -11,47 +11,36 @@ class TransactionsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 150,
-          height: 8,
-          margin: const EdgeInsets.only(bottom: 20),
-          decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(0.2),
-            borderRadius: kBorderRadius10,
-          ),
-        ),
-        BlocBuilder<RecordsBloc, RecordsState>(
-          builder: (context, state) {
-            if (state.isProcessing) {
-              return const Center(
-                child: Text(""),
-              );
-            }
-            if (state.records == null || state.records!.isEmpty) {
-              return Center(
-                child: Column(
-                  children: const [
-                    kHeight20,
-                    Text(""),
-                  ],
-                ),
-              );
-            }
-            return ListView.builder(
-              shrinkWrap: true,
-              itemCount: state.records!.length,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return TransactionsCard(
-                  records: state.records![index],
-                );
-              },
-            );
-          },
-        ),
-      ],
+    return BlocBuilder<RecordsBloc, RecordsState>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            state.isProcessing
+                ? const Text("Loading...")
+                : Container(
+                    width: 150,
+                    height: 8,
+                    margin: const EdgeInsets.only(bottom: 20),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.2),
+                      borderRadius: kBorderRadius10,
+                    ),
+                  ),
+            (state.records == null || state.records!.isEmpty)
+                ? kHeight05
+                : ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: state.records!.length,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return TransactionsCard(
+                        records: state.records![index],
+                      );
+                    },
+                  )
+          ],
+        );
+      },
     );
   }
 }

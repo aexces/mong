@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mong/application/main/main_bloc.dart';
-import 'package:mong/application/records/records_bloc.dart';
 import 'package:mong/presentation/pages/main/widgets/curved_bar.dart';
 import 'package:mong/presentation/pages/main/widgets/lists.dart';
 import 'package:mong/presentation/router/app_router.gr.dart';
@@ -23,9 +22,6 @@ class MainPage extends StatelessWidget {
               ? FloatingActionButton(
                   onPressed: () async {
                     context.router.push(const CrudRoute());
-                    context
-                        .read<RecordsBloc>()
-                        .add(const RecordsEvent.getRecords());
                   },
                   child: const Icon(Icons.add),
                 )

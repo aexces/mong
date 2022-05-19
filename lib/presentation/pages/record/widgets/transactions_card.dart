@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,6 +27,7 @@ class TransactionsCard extends StatelessWidget {
       confirmDismiss: (value) async {
         final bool isDismissed =
             await confirmDeleteBottomSheet(context, records);
+        log("at dismissible $isDismissed");
         return isDismissed;
       },
       background: const DismissibleBackground(
@@ -65,7 +68,6 @@ class TransactionsCard extends StatelessWidget {
                   records.purpose,
                   style: const TextStyle(
                     fontSize: 20,
-                    // fontWeight: FontWeight.bold,
                   ),
                 ),
                 kHeight05,
@@ -146,6 +148,9 @@ class TransactionsCard extends StatelessWidget {
                             RecordsEvent.deleteRecord(records.id),
                           );
                       context.router.pop();
+                      context.read<RecordsBloc>().add(
+                            const RecordsEvent.getRecords(),
+                          );
                     },
                   ),
                   kHeight10,

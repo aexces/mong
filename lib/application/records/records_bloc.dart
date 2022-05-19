@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -20,6 +22,7 @@ class RecordsBloc extends Bloc<RecordsEvent, RecordsState> {
         isProcessing: true,
       ));
       final _records = await recordRepository.getRecords();
+      log("Records fetch when get : $_records");
       _records.map((e) {
         if (e.recordsType == RecordsType.income) {
           _totalIncome = _totalIncome + e.amount;
@@ -37,26 +40,6 @@ class RecordsBloc extends Bloc<RecordsEvent, RecordsState> {
     });
     on<_DeleteRecord>((event, emit) async {
       await recordRepository.deleteRecord(event.id);
-      int _totalExpense = 0;
-      int _totalIncome = 0;
-      emit(state.copyWith(
-        isProcessing: true,
-      ));
-      final _records = await recordRepository.getRecords();
-      _records.map((e) {
-        if (e.recordsType == RecordsType.income) {
-          _totalIncome = _totalIncome + e.amount;
-        }
-        if (e.recordsType == RecordsType.expense) {
-          _totalExpense = _totalExpense + e.amount;
-        }
-      }).toList();
-      emit(state.copyWith(
-        isProcessing: false,
-        records: _records,
-        totalExpense: _totalExpense,
-        totalIncome: _totalIncome,
-      ));
     });
   }
 }
