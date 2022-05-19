@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mong/application/crud/crud_bloc.dart';
 import 'package:mong/core/core.dart';
@@ -26,6 +27,9 @@ class AmountTextField extends StatelessWidget {
           return TextFormField(
             cursorColor: kPrimaryColor,
             keyboardType: TextInputType.number,
+            inputFormatters: [
+              FilteringTextInputFormatter.digitsOnly,
+            ],
             decoration: const InputDecoration(
               border: InputBorder.none,
               hintText: "Amount",
@@ -37,6 +41,9 @@ class AmountTextField extends StatelessWidget {
               return null;
             },
             onChanged: (value) {
+              if (value.runtimeType == String) {
+                return;
+              }
               final amount = int.parse(value);
               context.read<CrudBloc>().add(
                     CrudEvent.amountUpdated(amount),
