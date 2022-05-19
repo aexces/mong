@@ -6,9 +6,11 @@ class DefaultButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.onPressed,
+    this.isTransparent = false,
   }) : super(key: key);
   final String text;
   final VoidCallback? onPressed;
+  final bool isTransparent;
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +21,13 @@ class DefaultButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: kBorderRadius10,
         ),
-        color: kPrimaryColor,
+        color: isTransparent ? kWhiteColor : kPrimaryColor,
         onPressed: onPressed,
         child: Text(
           text,
-          style: const TextStyle(
-            color: kWhiteColor,
-            fontSize: 20,
+          style: TextStyle(
+            color: isTransparent ? kPrimaryColor : kWhiteColor,
+            fontSize: isTransparent ? 21 : 20,
           ),
         ),
       ),

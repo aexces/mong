@@ -1,6 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:mong/core/core.dart';
 import 'package:mong/domain/records/records.dart';
+import 'package:mong/presentation/pages/record/widgets/dismissible_background.dart';
+import 'package:mong/presentation/widgets/default_button.dart';
+import 'package:mong/presentation/widgets/main_heading.dart';
 
 class TransactionsCard extends StatelessWidget {
   const TransactionsCard({
@@ -13,10 +17,16 @@ class TransactionsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dismissible(
       key: const ValueKey("key"),
-      onDismissed: (direction) {},
-      background: Container(
-        color: kLigtGreenColor,
-        child: const Icon(Icons.delete),
+      confirmDismiss: (value) async {
+        print(value);
+        final bool isDismissed = await confirmDeleteBottomSheet(context);
+        return isDismissed;
+      },
+      background: const DismissibleBackground(
+        isLeft: true,
+      ),
+      secondaryBackground: const DismissibleBackground(
+        isLeft: false,
       ),
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 5),
@@ -74,5 +84,63 @@ class TransactionsCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<bool> confirmDeleteBottomSheet(BuildContext context) async {
+    bool _isDismissed = false;
+    await showModalBottomSheet(
+      context: context,
+      enableDrag: false,
+      backgroundColor: Colors.transparent,
+      builder: (context) {
+        return Container(
+          decoration: BoxDecoration(
+            color: kWhiteColor,
+            borderRadius: kBorderRadius20,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(defaultPadding),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  kHeight20,
+                  CircleAvatar(
+                    radius: 60,
+                    backgroundColor: kBlackColor.withOpacity(0.1),
+                    child: const Center(
+                      child: Icon(
+                        Icons.delete,
+                        color: kPrimaryColor,
+                        size: 60,
+                      ),
+                    ),
+                  ),
+                  const MainHeading("Delete?"),
+                  kHeight30,
+                  DefaultButton(
+                    text: "Delete",
+                    onPressed: () {
+                      _isDismissed = true;
+                      context.router.pop();
+                    },
+                  ),
+                  kHeight10,
+                  DefaultButton(
+                    text: "Cancel",
+                    isTransparent: true,
+                    onPressed: () {
+                      _isDismissed = false;
+                      context.router.pop();
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+    return _isDismissed;
   }
 }
