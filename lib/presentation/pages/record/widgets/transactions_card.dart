@@ -23,7 +23,7 @@ class TransactionsCard extends StatelessWidget {
     final _date = DateFormat('dd-MMM-yyyy').format(records.dateTime);
     final String _time = DateFormat('hh:mm a').format(records.dateTime);
     return Dismissible(
-      key: const ValueKey("key"),
+      key: ValueKey(records.id),
       confirmDismiss: (value) async {
         final bool isDismissed =
             await confirmDeleteBottomSheet(context, records);
