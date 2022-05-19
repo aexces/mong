@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -38,7 +36,9 @@ class RecordsBloc extends Bloc<RecordsEvent, RecordsState> {
         totalExpense: _totalExpense,
         totalIncome: _totalIncome,
       ));
-      log(state.records!.length.toString());
+    });
+    on<_DeleteRecord>((event, emit) async {
+      await recordRepository.deleteRecord(event.id);
     });
   }
 }

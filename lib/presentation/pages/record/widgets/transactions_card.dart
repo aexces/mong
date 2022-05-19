@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mong/application/records/records_bloc.dart';
 import 'package:mong/core/core.dart';
 import 'package:mong/domain/records/records.dart';
 import 'package:mong/presentation/pages/record/widgets/dismissible_background.dart';
@@ -18,8 +20,8 @@ class TransactionsCard extends StatelessWidget {
     return Dismissible(
       key: const ValueKey("key"),
       confirmDismiss: (value) async {
-        print(value);
-        final bool isDismissed = await confirmDeleteBottomSheet(context);
+        final bool isDismissed =
+            await confirmDeleteBottomSheet(context, records);
         return isDismissed;
       },
       background: const DismissibleBackground(
@@ -86,7 +88,8 @@ class TransactionsCard extends StatelessWidget {
     );
   }
 
-  Future<bool> confirmDeleteBottomSheet(BuildContext context) async {
+  Future<bool> confirmDeleteBottomSheet(
+      BuildContext context, Records records) async {
     bool _isDismissed = false;
     await showModalBottomSheet(
       context: context,
@@ -122,6 +125,12 @@ class TransactionsCard extends StatelessWidget {
                     text: "Delete",
                     onPressed: () {
                       _isDismissed = true;
+                      context.read<RecordsBloc>().add(
+                            RecordsEvent.deleteRecord(records.id),
+                          );
+                      context.read<RecordsBloc>().add(
+                            const RecordsEvent.getRecords(),
+                          );
                       context.router.pop();
                     },
                   ),

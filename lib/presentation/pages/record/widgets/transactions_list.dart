@@ -24,6 +24,21 @@ class TransactionsList extends StatelessWidget {
         ),
         BlocBuilder<RecordsBloc, RecordsState>(
           builder: (context, state) {
+            if (state.isProcessing) {
+              return const Center(
+                child: Text(""),
+              );
+            }
+            if (state.records == null || state.records!.isEmpty) {
+              return Center(
+                child: Column(
+                  children: const [
+                    kHeight20,
+                    Text(""),
+                  ],
+                ),
+              );
+            }
             return ListView.builder(
               shrinkWrap: true,
               itemCount: state.records!.length,

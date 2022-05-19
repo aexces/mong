@@ -13,23 +13,6 @@ class Transactions extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<RecordsBloc, RecordsState>(
       builder: (context, state) {
-        if (state.isProcessing) {
-          return const Center(
-            child: CircularProgressIndicator(
-              color: kPrimaryColor,
-            ),
-          );
-        }
-        if (state.records == null || state.records!.isEmpty) {
-          return Center(
-            child: Column(
-              children: const [
-                kHeight20,
-                Text("No records"),
-              ],
-            ),
-          );
-        }
         return Container(
           padding: const EdgeInsets.all(defaultPadding),
           width: double.infinity,

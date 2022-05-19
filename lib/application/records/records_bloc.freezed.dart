@@ -21,6 +21,12 @@ class _$RecordsEventTearOff {
   _GetRecords getRecords() {
     return const _GetRecords();
   }
+
+  _DeleteRecord deleteRecord(String id) {
+    return _DeleteRecord(
+      id,
+    );
+  }
 }
 
 /// @nodoc
@@ -31,32 +37,38 @@ mixin _$RecordsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRecords,
+    required TResult Function(String id) deleteRecord,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRecords,
+    TResult Function(String id)? deleteRecord,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRecords,
+    TResult Function(String id)? deleteRecord,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetRecords value) getRecords,
+    required TResult Function(_DeleteRecord value) deleteRecord,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetRecords value)? getRecords,
+    TResult Function(_DeleteRecord value)? deleteRecord,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetRecords value)? getRecords,
+    TResult Function(_DeleteRecord value)? deleteRecord,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,6 +131,7 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRecords,
+    required TResult Function(String id) deleteRecord,
   }) {
     return getRecords();
   }
@@ -127,6 +140,7 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRecords,
+    TResult Function(String id)? deleteRecord,
   }) {
     return getRecords?.call();
   }
@@ -135,6 +149,7 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRecords,
+    TResult Function(String id)? deleteRecord,
     required TResult orElse(),
   }) {
     if (getRecords != null) {
@@ -147,6 +162,7 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetRecords value) getRecords,
+    required TResult Function(_DeleteRecord value) deleteRecord,
   }) {
     return getRecords(this);
   }
@@ -155,6 +171,7 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetRecords value)? getRecords,
+    TResult Function(_DeleteRecord value)? deleteRecord,
   }) {
     return getRecords?.call(this);
   }
@@ -163,6 +180,7 @@ class _$_GetRecords implements _GetRecords {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetRecords value)? getRecords,
+    TResult Function(_DeleteRecord value)? deleteRecord,
     required TResult orElse(),
   }) {
     if (getRecords != null) {
@@ -174,6 +192,139 @@ class _$_GetRecords implements _GetRecords {
 
 abstract class _GetRecords implements RecordsEvent {
   const factory _GetRecords() = _$_GetRecords;
+}
+
+/// @nodoc
+abstract class _$DeleteRecordCopyWith<$Res> {
+  factory _$DeleteRecordCopyWith(
+          _DeleteRecord value, $Res Function(_DeleteRecord) then) =
+      __$DeleteRecordCopyWithImpl<$Res>;
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$DeleteRecordCopyWithImpl<$Res> extends _$RecordsEventCopyWithImpl<$Res>
+    implements _$DeleteRecordCopyWith<$Res> {
+  __$DeleteRecordCopyWithImpl(
+      _DeleteRecord _value, $Res Function(_DeleteRecord) _then)
+      : super(_value, (v) => _then(v as _DeleteRecord));
+
+  @override
+  _DeleteRecord get _value => super._value as _DeleteRecord;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_DeleteRecord(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DeleteRecord implements _DeleteRecord {
+  const _$_DeleteRecord(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'RecordsEvent.deleteRecord(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _DeleteRecord &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  _$DeleteRecordCopyWith<_DeleteRecord> get copyWith =>
+      __$DeleteRecordCopyWithImpl<_DeleteRecord>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getRecords,
+    required TResult Function(String id) deleteRecord,
+  }) {
+    return deleteRecord(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getRecords,
+    TResult Function(String id)? deleteRecord,
+  }) {
+    return deleteRecord?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getRecords,
+    TResult Function(String id)? deleteRecord,
+    required TResult orElse(),
+  }) {
+    if (deleteRecord != null) {
+      return deleteRecord(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetRecords value) getRecords,
+    required TResult Function(_DeleteRecord value) deleteRecord,
+  }) {
+    return deleteRecord(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetRecords value)? getRecords,
+    TResult Function(_DeleteRecord value)? deleteRecord,
+  }) {
+    return deleteRecord?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetRecords value)? getRecords,
+    TResult Function(_DeleteRecord value)? deleteRecord,
+    required TResult orElse(),
+  }) {
+    if (deleteRecord != null) {
+      return deleteRecord(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteRecord implements RecordsEvent {
+  const factory _DeleteRecord(String id) = _$_DeleteRecord;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$DeleteRecordCopyWith<_DeleteRecord> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

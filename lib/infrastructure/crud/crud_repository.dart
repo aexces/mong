@@ -10,6 +10,7 @@ class CrudRepository implements ICrudRepository {
   @override
   Future<void> addRecords(Records records) async {
     final _recordsBox = await Hive.openBox<Records>(recordsDatabase);
-    await _recordsBox.add(records);
+    // await _recordsBox.add(records);
+    await _recordsBox.put(records.id, records);
   }
 }
