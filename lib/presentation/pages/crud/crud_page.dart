@@ -13,7 +13,9 @@ import 'package:mong/presentation/widgets/new_back_button.dart';
 import 'widgets/purpose_text_field.dart';
 
 class CrudPage extends StatelessWidget {
-  const CrudPage({Key? key}) : super(key: key);
+  const CrudPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,16 +42,29 @@ class CrudPage extends StatelessWidget {
                     kHeight20,
                     const AmountTextField(),
                     kHeight30,
-                    DefaultButton(
-                      text: "Submit",
-                      onPressed: () {
-                        context.read<CrudBloc>().add(
-                              const CrudEvent.submitButtonPressed(),
-                            );
-                        context.router.pop();
-                        context.read<RecordsBloc>().add(
-                              const RecordsEvent.getRecords(),
-                            );
+                    BlocBuilder<CrudBloc, CrudState>(
+                      builder: (context, state) {
+                        return DefaultButton(
+                          text: "Submit",
+                          onPressed: () {
+                            if (state.amount == 0 || state.purpose == "") {
+                              return;
+                            }
+                            context.read<CrudBloc>().add(
+                                  const CrudEvent.submitButtonPressed(),
+                                );
+                            context.router.pop();
+                            context.read<RecordsBloc>().add(
+                                  const RecordsEvent.getRecords(),
+                                );
+                            context.read<CrudBloc>().add(
+                                  const CrudEvent.amountUpdated(0),
+                                );
+                            context.read<CrudBloc>().add(
+                                  const CrudEvent.purposeUpdated(""),
+                                );
+                          },
+                        );
                       },
                     ),
                   ],

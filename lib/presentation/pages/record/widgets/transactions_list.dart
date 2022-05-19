@@ -28,15 +28,18 @@ class TransactionsList extends StatelessWidget {
                   ),
             (state.records == null || state.records!.isEmpty)
                 ? kHeight05
-                : ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: state.records!.length,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return TransactionsCard(
-                        records: state.records![index],
-                      );
-                    },
+                : Padding(
+                    padding: const EdgeInsets.only(bottom: defaultPadding * 2),
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: state.records!.length,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return TransactionsCard(
+                          records: state.records![index],
+                        );
+                      },
+                    ),
                   )
           ],
         );

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +25,6 @@ class TransactionsCard extends StatelessWidget {
       confirmDismiss: (value) async {
         final bool isDismissed =
             await confirmDeleteBottomSheet(context, records);
-        log("at dismissible $isDismissed");
         return isDismissed;
       },
       background: const DismissibleBackground(
@@ -71,28 +68,33 @@ class TransactionsCard extends StatelessWidget {
                   ),
                 ),
                 kHeight05,
-                Row(
-                  children: [
-                    Text(
-                      _date,
-                      style: const TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                    kWidth10,
-                    Text(
-                      _time,
-                      style: const TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                  ],
+                Text(
+                  _date,
+                  overflow: TextOverflow.ellipsis,
+                  textScaleFactor: 0.9,
+                  maxLines: 1,
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+                kHeight05,
+                Text(
+                  _time,
+                  overflow: TextOverflow.ellipsis,
+                  textScaleFactor: 0.9,
+                  maxLines: 1,
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
                 ),
               ],
             ),
             const Spacer(),
             Text(
               "${records.amount}/-",
+              overflow: TextOverflow.ellipsis,
+              textScaleFactor: 0.9,
+              maxLines: 1,
               style: const TextStyle(
                 fontSize: 20,
               ),

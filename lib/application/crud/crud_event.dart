@@ -7,4 +7,5 @@ class CrudEvent with _$CrudEvent {
   const factory CrudEvent.purposeUpdated(String purpose) = _PurposeUpdated;
   const factory CrudEvent.amountUpdated(int amount) = _AmountUpdated;
   const factory CrudEvent.submitButtonPressed() = _SubmitButtonPressed;
+  const factory CrudEvent.updateRecord(Records records) = _UpdateRecord;
 }

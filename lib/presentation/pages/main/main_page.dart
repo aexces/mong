@@ -21,7 +21,7 @@ class MainPage extends StatelessWidget {
           floatingActionButton: state.bottomNavigationIndex == 0
               ? FloatingActionButton(
                   onPressed: () async {
-                    context.router.push(const CrudRoute());
+                    context.router.push(CrudRoute());
                   },
                   child: const Icon(Icons.add),
                 )

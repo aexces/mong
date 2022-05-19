@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -22,7 +20,7 @@ class RecordsBloc extends Bloc<RecordsEvent, RecordsState> {
         isProcessing: true,
       ));
       final _records = await recordRepository.getRecords();
-      log("Records fetch when get : $_records");
+      _records.sort((a, b) => b.dateTime.compareTo(a.dateTime));
       _records.map((e) {
         if (e.recordsType == RecordsType.income) {
           _totalIncome = _totalIncome + e.amount;

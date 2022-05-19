@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mong/application/crud/crud_bloc.dart';
 import 'package:mong/core/colors.dart';
 
 class NewBackButton extends StatelessWidget {
@@ -12,6 +14,12 @@ class NewBackButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.router.pop();
+        context.read<CrudBloc>().add(
+              const CrudEvent.amountUpdated(0),
+            );
+        context.read<CrudBloc>().add(
+              const CrudEvent.purposeUpdated(""),
+            );
       },
       child: const SizedBox(
         width: 50,

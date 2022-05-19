@@ -39,6 +39,12 @@ class _$CrudEventTearOff {
   _SubmitButtonPressed submitButtonPressed() {
     return const _SubmitButtonPressed();
   }
+
+  _UpdateRecord updateRecord(Records records) {
+    return _UpdateRecord(
+      records,
+    );
+  }
 }
 
 /// @nodoc
@@ -52,6 +58,7 @@ mixin _$CrudEvent {
     required TResult Function(String purpose) purposeUpdated,
     required TResult Function(int amount) amountUpdated,
     required TResult Function() submitButtonPressed,
+    required TResult Function(Records records) updateRecord,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +67,7 @@ mixin _$CrudEvent {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,6 +76,7 @@ mixin _$CrudEvent {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -77,6 +86,7 @@ mixin _$CrudEvent {
     required TResult Function(_PurposeUpdated value) purposeUpdated,
     required TResult Function(_AmountUpdated value) amountUpdated,
     required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
+    required TResult Function(_UpdateRecord value) updateRecord,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +95,7 @@ mixin _$CrudEvent {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +104,7 @@ mixin _$CrudEvent {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -183,6 +195,7 @@ class _$_RecordsTypeUpdated implements _RecordsTypeUpdated {
     required TResult Function(String purpose) purposeUpdated,
     required TResult Function(int amount) amountUpdated,
     required TResult Function() submitButtonPressed,
+    required TResult Function(Records records) updateRecord,
   }) {
     return recordsTypeUpdated(recordsType);
   }
@@ -194,6 +207,7 @@ class _$_RecordsTypeUpdated implements _RecordsTypeUpdated {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
   }) {
     return recordsTypeUpdated?.call(recordsType);
   }
@@ -205,6 +219,7 @@ class _$_RecordsTypeUpdated implements _RecordsTypeUpdated {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
     required TResult orElse(),
   }) {
     if (recordsTypeUpdated != null) {
@@ -220,6 +235,7 @@ class _$_RecordsTypeUpdated implements _RecordsTypeUpdated {
     required TResult Function(_PurposeUpdated value) purposeUpdated,
     required TResult Function(_AmountUpdated value) amountUpdated,
     required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
+    required TResult Function(_UpdateRecord value) updateRecord,
   }) {
     return recordsTypeUpdated(this);
   }
@@ -231,6 +247,7 @@ class _$_RecordsTypeUpdated implements _RecordsTypeUpdated {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
   }) {
     return recordsTypeUpdated?.call(this);
   }
@@ -242,6 +259,7 @@ class _$_RecordsTypeUpdated implements _RecordsTypeUpdated {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
     required TResult orElse(),
   }) {
     if (recordsTypeUpdated != null) {
@@ -329,6 +347,7 @@ class _$_PurposeUpdated implements _PurposeUpdated {
     required TResult Function(String purpose) purposeUpdated,
     required TResult Function(int amount) amountUpdated,
     required TResult Function() submitButtonPressed,
+    required TResult Function(Records records) updateRecord,
   }) {
     return purposeUpdated(purpose);
   }
@@ -340,6 +359,7 @@ class _$_PurposeUpdated implements _PurposeUpdated {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
   }) {
     return purposeUpdated?.call(purpose);
   }
@@ -351,6 +371,7 @@ class _$_PurposeUpdated implements _PurposeUpdated {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
     required TResult orElse(),
   }) {
     if (purposeUpdated != null) {
@@ -366,6 +387,7 @@ class _$_PurposeUpdated implements _PurposeUpdated {
     required TResult Function(_PurposeUpdated value) purposeUpdated,
     required TResult Function(_AmountUpdated value) amountUpdated,
     required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
+    required TResult Function(_UpdateRecord value) updateRecord,
   }) {
     return purposeUpdated(this);
   }
@@ -377,6 +399,7 @@ class _$_PurposeUpdated implements _PurposeUpdated {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
   }) {
     return purposeUpdated?.call(this);
   }
@@ -388,6 +411,7 @@ class _$_PurposeUpdated implements _PurposeUpdated {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
     required TResult orElse(),
   }) {
     if (purposeUpdated != null) {
@@ -474,6 +498,7 @@ class _$_AmountUpdated implements _AmountUpdated {
     required TResult Function(String purpose) purposeUpdated,
     required TResult Function(int amount) amountUpdated,
     required TResult Function() submitButtonPressed,
+    required TResult Function(Records records) updateRecord,
   }) {
     return amountUpdated(amount);
   }
@@ -485,6 +510,7 @@ class _$_AmountUpdated implements _AmountUpdated {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
   }) {
     return amountUpdated?.call(amount);
   }
@@ -496,6 +522,7 @@ class _$_AmountUpdated implements _AmountUpdated {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
     required TResult orElse(),
   }) {
     if (amountUpdated != null) {
@@ -511,6 +538,7 @@ class _$_AmountUpdated implements _AmountUpdated {
     required TResult Function(_PurposeUpdated value) purposeUpdated,
     required TResult Function(_AmountUpdated value) amountUpdated,
     required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
+    required TResult Function(_UpdateRecord value) updateRecord,
   }) {
     return amountUpdated(this);
   }
@@ -522,6 +550,7 @@ class _$_AmountUpdated implements _AmountUpdated {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
   }) {
     return amountUpdated?.call(this);
   }
@@ -533,6 +562,7 @@ class _$_AmountUpdated implements _AmountUpdated {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
     required TResult orElse(),
   }) {
     if (amountUpdated != null) {
@@ -596,6 +626,7 @@ class _$_SubmitButtonPressed implements _SubmitButtonPressed {
     required TResult Function(String purpose) purposeUpdated,
     required TResult Function(int amount) amountUpdated,
     required TResult Function() submitButtonPressed,
+    required TResult Function(Records records) updateRecord,
   }) {
     return submitButtonPressed();
   }
@@ -607,6 +638,7 @@ class _$_SubmitButtonPressed implements _SubmitButtonPressed {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
   }) {
     return submitButtonPressed?.call();
   }
@@ -618,6 +650,7 @@ class _$_SubmitButtonPressed implements _SubmitButtonPressed {
     TResult Function(String purpose)? purposeUpdated,
     TResult Function(int amount)? amountUpdated,
     TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
     required TResult orElse(),
   }) {
     if (submitButtonPressed != null) {
@@ -633,6 +666,7 @@ class _$_SubmitButtonPressed implements _SubmitButtonPressed {
     required TResult Function(_PurposeUpdated value) purposeUpdated,
     required TResult Function(_AmountUpdated value) amountUpdated,
     required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
+    required TResult Function(_UpdateRecord value) updateRecord,
   }) {
     return submitButtonPressed(this);
   }
@@ -644,6 +678,7 @@ class _$_SubmitButtonPressed implements _SubmitButtonPressed {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
   }) {
     return submitButtonPressed?.call(this);
   }
@@ -655,6 +690,7 @@ class _$_SubmitButtonPressed implements _SubmitButtonPressed {
     TResult Function(_PurposeUpdated value)? purposeUpdated,
     TResult Function(_AmountUpdated value)? amountUpdated,
     TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
     required TResult orElse(),
   }) {
     if (submitButtonPressed != null) {
@@ -666,6 +702,157 @@ class _$_SubmitButtonPressed implements _SubmitButtonPressed {
 
 abstract class _SubmitButtonPressed implements CrudEvent {
   const factory _SubmitButtonPressed() = _$_SubmitButtonPressed;
+}
+
+/// @nodoc
+abstract class _$UpdateRecordCopyWith<$Res> {
+  factory _$UpdateRecordCopyWith(
+          _UpdateRecord value, $Res Function(_UpdateRecord) then) =
+      __$UpdateRecordCopyWithImpl<$Res>;
+  $Res call({Records records});
+}
+
+/// @nodoc
+class __$UpdateRecordCopyWithImpl<$Res> extends _$CrudEventCopyWithImpl<$Res>
+    implements _$UpdateRecordCopyWith<$Res> {
+  __$UpdateRecordCopyWithImpl(
+      _UpdateRecord _value, $Res Function(_UpdateRecord) _then)
+      : super(_value, (v) => _then(v as _UpdateRecord));
+
+  @override
+  _UpdateRecord get _value => super._value as _UpdateRecord;
+
+  @override
+  $Res call({
+    Object? records = freezed,
+  }) {
+    return _then(_UpdateRecord(
+      records == freezed
+          ? _value.records
+          : records // ignore: cast_nullable_to_non_nullable
+              as Records,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateRecord implements _UpdateRecord {
+  const _$_UpdateRecord(this.records);
+
+  @override
+  final Records records;
+
+  @override
+  String toString() {
+    return 'CrudEvent.updateRecord(records: $records)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _UpdateRecord &&
+            const DeepCollectionEquality().equals(other.records, records));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(records));
+
+  @JsonKey(ignore: true)
+  @override
+  _$UpdateRecordCopyWith<_UpdateRecord> get copyWith =>
+      __$UpdateRecordCopyWithImpl<_UpdateRecord>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RecordsType recordsType) recordsTypeUpdated,
+    required TResult Function(String purpose) purposeUpdated,
+    required TResult Function(int amount) amountUpdated,
+    required TResult Function() submitButtonPressed,
+    required TResult Function(Records records) updateRecord,
+  }) {
+    return updateRecord(records);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
+  }) {
+    return updateRecord?.call(records);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RecordsType recordsType)? recordsTypeUpdated,
+    TResult Function(String purpose)? purposeUpdated,
+    TResult Function(int amount)? amountUpdated,
+    TResult Function()? submitButtonPressed,
+    TResult Function(Records records)? updateRecord,
+    required TResult orElse(),
+  }) {
+    if (updateRecord != null) {
+      return updateRecord(records);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RecordsTypeUpdated value) recordsTypeUpdated,
+    required TResult Function(_PurposeUpdated value) purposeUpdated,
+    required TResult Function(_AmountUpdated value) amountUpdated,
+    required TResult Function(_SubmitButtonPressed value) submitButtonPressed,
+    required TResult Function(_UpdateRecord value) updateRecord,
+  }) {
+    return updateRecord(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
+  }) {
+    return updateRecord?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RecordsTypeUpdated value)? recordsTypeUpdated,
+    TResult Function(_PurposeUpdated value)? purposeUpdated,
+    TResult Function(_AmountUpdated value)? amountUpdated,
+    TResult Function(_SubmitButtonPressed value)? submitButtonPressed,
+    TResult Function(_UpdateRecord value)? updateRecord,
+    required TResult orElse(),
+  }) {
+    if (updateRecord != null) {
+      return updateRecord(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateRecord implements CrudEvent {
+  const factory _UpdateRecord(Records records) = _$_UpdateRecord;
+
+  Records get records;
+  @JsonKey(ignore: true)
+  _$UpdateRecordCopyWith<_UpdateRecord> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

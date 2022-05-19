@@ -15,7 +15,7 @@ class MainHeading extends StatelessWidget {
         Text(
           heading,
           style: const TextStyle(
-            fontSize: 30,
+            fontSize: 32,
             letterSpacing: 1,
             overflow: TextOverflow.ellipsis,
             fontFamily: "SourceSansPro",

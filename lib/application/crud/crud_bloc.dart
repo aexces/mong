@@ -32,9 +32,6 @@ class CrudBloc extends Bloc<CrudEvent, CrudState> {
       ));
     });
     on<_SubmitButtonPressed>((event, emit) async {
-      if (state.amount == 0 || state.purpose.isEmpty) {
-        return;
-      }
       emit(state.copyWith(
         isProcessing: true,
       ));
@@ -50,5 +47,6 @@ class CrudBloc extends Bloc<CrudEvent, CrudState> {
         isProcessing: false,
       ));
     });
+    on<_UpdateRecord>((event, emit) {});
   }
 }
