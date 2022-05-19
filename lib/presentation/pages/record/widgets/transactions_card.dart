@@ -7,6 +7,7 @@ import 'package:mong/domain/records/records.dart';
 import 'package:mong/presentation/pages/record/widgets/dismissible_background.dart';
 import 'package:mong/presentation/widgets/default_button.dart';
 import 'package:mong/presentation/widgets/main_heading.dart';
+import 'package:intl/intl.dart';
 
 class TransactionsCard extends StatelessWidget {
   const TransactionsCard({
@@ -17,6 +18,8 @@ class TransactionsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _date = DateFormat('dd-MMM-yyyy').format(records.dateTime);
+    final String _time = DateFormat('hh:mm a').format(records.dateTime);
     return Dismissible(
       key: const ValueKey("key"),
       confirmDismiss: (value) async {
@@ -66,11 +69,22 @@ class TransactionsCard extends StatelessWidget {
                   ),
                 ),
                 kHeight05,
-                const Text(
-                  "Time",
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
+                Row(
+                  children: [
+                    Text(
+                      _date,
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    kWidth10,
+                    Text(
+                      _time,
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -97,9 +111,12 @@ class TransactionsCard extends StatelessWidget {
       backgroundColor: Colors.transparent,
       builder: (context) {
         return Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: kWhiteColor,
-            borderRadius: kBorderRadius20,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(defaultPadding),
+              topRight: Radius.circular(defaultPadding),
+            ),
           ),
           child: Padding(
             padding: const EdgeInsets.all(defaultPadding),
@@ -127,9 +144,6 @@ class TransactionsCard extends StatelessWidget {
                       _isDismissed = true;
                       context.read<RecordsBloc>().add(
                             RecordsEvent.deleteRecord(records.id),
-                          );
-                      context.read<RecordsBloc>().add(
-                            const RecordsEvent.getRecords(),
                           );
                       context.router.pop();
                     },

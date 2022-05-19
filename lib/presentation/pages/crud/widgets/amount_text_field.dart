@@ -35,15 +35,9 @@ class AmountTextField extends StatelessWidget {
               hintText: "Amount",
             ),
             validator: (value) {
-              if (value == null) {
-                return "Amount can't be empty";
-              }
               return null;
             },
             onChanged: (value) {
-              if (value.runtimeType == String) {
-                return;
-              }
               final amount = int.parse(value);
               context.read<CrudBloc>().add(
                     CrudEvent.amountUpdated(amount),

@@ -20,11 +20,14 @@ class Records {
   final int amount;
   @HiveField(3)
   final RecordsType recordsType;
+  @HiveField(4)
+  final DateTime dateTime;
 
   Records({
     required this.id,
     required this.purpose,
     required this.amount,
     required this.recordsType,
+    required this.dateTime,
   });
 }

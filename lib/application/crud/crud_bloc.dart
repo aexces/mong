@@ -43,6 +43,7 @@ class CrudBloc extends Bloc<CrudEvent, CrudState> {
         recordsType: state.recordsType,
         amount: state.amount,
         purpose: state.purpose,
+        dateTime: DateTime.now(),
       );
       await crudRepository.addRecords(_records);
       emit(state.copyWith(

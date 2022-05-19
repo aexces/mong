@@ -24,8 +24,6 @@ class RecordsBloc extends Bloc<RecordsEvent, RecordsState> {
         if (e.recordsType == RecordsType.income) {
           _totalIncome = _totalIncome + e.amount;
         }
-      }).toList();
-      _records.map((e) {
         if (e.recordsType == RecordsType.expense) {
           _totalExpense = _totalExpense + e.amount;
         }
@@ -39,6 +37,26 @@ class RecordsBloc extends Bloc<RecordsEvent, RecordsState> {
     });
     on<_DeleteRecord>((event, emit) async {
       await recordRepository.deleteRecord(event.id);
+      int _totalExpense = 0;
+      int _totalIncome = 0;
+      emit(state.copyWith(
+        isProcessing: true,
+      ));
+      final _records = await recordRepository.getRecords();
+      _records.map((e) {
+        if (e.recordsType == RecordsType.income) {
+          _totalIncome = _totalIncome + e.amount;
+        }
+        if (e.recordsType == RecordsType.expense) {
+          _totalExpense = _totalExpense + e.amount;
+        }
+      }).toList();
+      emit(state.copyWith(
+        isProcessing: false,
+        records: _records,
+        totalExpense: _totalExpense,
+        totalIncome: _totalIncome,
+      ));
     });
   }
 }

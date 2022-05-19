@@ -21,13 +21,14 @@ class RecordsAdapter extends TypeAdapter<Records> {
       purpose: fields[1] as String,
       amount: fields[2] as int,
       recordsType: fields[3] as RecordsType,
+      dateTime: fields[4] as DateTime,
     );
   }
 
   @override
   void write(BinaryWriter writer, Records obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -35,7 +36,9 @@ class RecordsAdapter extends TypeAdapter<Records> {
       ..writeByte(2)
       ..write(obj.amount)
       ..writeByte(3)
-      ..write(obj.recordsType);
+      ..write(obj.recordsType)
+      ..writeByte(4)
+      ..write(obj.dateTime);
   }
 
   @override
